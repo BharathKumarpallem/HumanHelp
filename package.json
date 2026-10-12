@@ -1,0 +1,41 @@
+{
+  "name": "humanhelp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run server\" \"npm run client\"",
+    "server": "tsx server/index.ts",
+    "client": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.5",
+    "oxlint": "^1.81.0",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.15",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  }
+}
