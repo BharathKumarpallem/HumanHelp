@@ -15,7 +15,7 @@ export default {
           300: '#5eead4',
           400: '#2dd4bf',
           500: '#14b8a6',
-          600: '#0d9488',
+          600: '#0d9488', // Recommended Primary Teal
           700: '#0f766e',
           800: '#115e59',
           900: '#134e4a',
@@ -31,8 +31,18 @@ export default {
           600: '#475569',
           700: '#334155',
           800: '#1e293b',
-          900: '#0f172a',
-          950: '#090d16',
+          900: '#16324f', // Recommended Dark Navy #16324F
+          950: '#0d1f33',
+        },
+        theme: {
+          lightBg: '#f8fafc',
+          card: '#ffffff',
+          teal: '#0d9488',
+          navy: '#16324f',
+          darkBg: '#0f172a',
+          darkCard: '#1e293b',
+          darkCyan: '#22d3ee',
+          darkText: '#f8fafc',
         },
         accent: {
           50: '#eef2ff',

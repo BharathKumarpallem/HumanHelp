@@ -24,9 +24,9 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({ provider, onBookClic
   const favorited = isFavorite(provider.id);
 
   return (
-    <div className="group relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-lg transition-all duration-200 flex flex-col justify-between overflow-hidden">
+    <div className="group relative rounded-2xl bg-white dark:bg-[#1E293B] border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden">
       {/* Top Banner accent */}
-      <div className="h-2 w-full bg-gradient-to-r from-brand-600 to-teal-400 group-hover:h-2.5 transition-all" />
+      <div className="h-2 w-full bg-gradient-to-r from-[#0D9488] to-teal-400 group-hover:h-2.5 transition-all" />
 
       <div className="p-5 flex-1 flex flex-col">
         {/* Header with Avatar, Name, and Favorite Button */}
@@ -39,13 +39,13 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({ provider, onBookClic
                 className="w-14 h-14 rounded-2xl object-cover border border-slate-200 dark:border-slate-700 shadow-2xs"
               />
               {provider.isAcceptingBookings && (
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" title="Accepting bookings today" />
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#1E293B]" title="Accepting bookings today" />
               )}
             </div>
             <div>
               <Link 
                 to={`/provider/${provider.id}`} 
-                className="font-bold text-base text-slate-900 dark:text-slate-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors line-clamp-1"
+                className="font-bold text-base text-[#16324F] dark:text-white hover:text-[#0D9488] dark:hover:text-[#22D3EE] transition-colors line-clamp-1"
               >
                 {provider.businessName}
               </Link>
@@ -83,10 +83,10 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({ provider, onBookClic
         </p>
 
         {/* Key Attributes Grid */}
-        <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-100 dark:border-slate-800/60">
+        <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-400 mb-4 bg-[#F8FAFC] dark:bg-[#0F172A]/70 p-3 rounded-xl border border-slate-100 dark:border-slate-800/80">
           <div className="flex items-center gap-1.5">
             <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-            <span className="font-bold text-slate-900 dark:text-slate-100">{provider.rating}</span>
+            <span className="font-bold text-[#16324F] dark:text-white">{provider.rating}</span>
             <span className="text-[11px] text-slate-400">({provider.reviewCount} reviews)</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -118,11 +118,11 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({ provider, onBookClic
       </div>
 
       {/* Footer bar with Pricing & Actions */}
-      <div className="p-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/40 flex items-center justify-between gap-3">
+      <div className="p-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 bg-[#F8FAFC]/80 dark:bg-[#0F172A]/50 flex items-center justify-between gap-3">
         <div>
           <span className="text-[10px] uppercase font-semibold text-slate-400 block leading-tight">Starting At</span>
           <div className="flex items-baseline gap-1">
-            <span className="text-lg font-extrabold text-slate-900 dark:text-slate-100">${provider.startingRate}</span>
+            <span className="text-lg font-extrabold text-[#16324F] dark:text-white">${provider.startingRate}</span>
             <span className="text-xs text-slate-500 dark:text-slate-400">/{provider.pricingType}</span>
           </div>
         </div>
@@ -136,7 +136,7 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({ provider, onBookClic
           </Link>
           <button
             onClick={() => onBookClick && onBookClick(provider)}
-            className="btn-primary py-1.5 px-3.5 text-xs shadow-xs"
+            className="btn-primary py-1.5 px-3.5 text-xs font-bold shadow-xs"
           >
             <span>Book</span>
             <ArrowRight className="w-3.5 h-3.5" />
