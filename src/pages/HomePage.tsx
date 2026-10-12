@@ -21,7 +21,14 @@ import {
   ChevronDown,
   UserCheck,
   Award,
-  Zap
+  Zap,
+  Activity,
+  Truck,
+  Navigation,
+  Car,
+  Briefcase,
+  PawPrint,
+  ShieldAlert
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -61,10 +68,17 @@ export const HomePage: React.FC = () => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Wrench': return <Wrench className="w-6 h-6 text-brand-600 dark:text-brand-400" />;
+      case 'Activity': return <Activity className="w-6 h-6 text-rose-600 dark:text-rose-400" />;
+      case 'Truck': return <Truck className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />;
       case 'GraduationCap': return <GraduationCap className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />;
-      case 'Laptop': return <Laptop className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />;
+      case 'Laptop': return <Laptop className="w-6 h-6 text-blue-600 dark:text-blue-400" />;
       case 'Package': return <Package className="w-6 h-6 text-amber-600 dark:text-amber-400" />;
-      case 'HeartHandshake': return <HeartHandshake className="w-6 h-6 text-rose-600 dark:text-rose-400" />;
+      case 'Navigation': return <Navigation className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />;
+      case 'Sparkles': return <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />;
+      case 'Car': return <Car className="w-6 h-6 text-orange-600 dark:text-orange-400" />;
+      case 'Briefcase': return <Briefcase className="w-6 h-6 text-slate-700 dark:text-slate-300" />;
+      case 'PawPrint': return <PawPrint className="w-6 h-6 text-amber-700 dark:text-amber-400" />;
+      case 'ShieldAlert': return <ShieldAlert className="w-6 h-6 text-pink-600 dark:text-pink-400" />;
       default: return <Wrench className="w-6 h-6 text-brand-600 dark:text-brand-400" />;
     }
   };

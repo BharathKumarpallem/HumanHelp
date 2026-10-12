@@ -8,7 +8,7 @@
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
       "phone": "+1 (555) 234-5678",
       "location": "Metropolitan Area, Downtown",
-      "bio": "Homeowner seeking reliable, certified local professionals for residential maintenance and tutoring.",
+      "bio": "Homeowner seeking reliable, certified local professionals for residential maintenance, family healthcare visits, and tutoring.",
       "createdAt": "2025-01-15T08:00:00Z"
     },
     {
@@ -19,7 +19,7 @@
       "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
       "phone": "+1 (555) 345-6789",
       "location": "North Metro & Citywide",
-      "bio": "Licensed Master Electrician with 12+ years specializing in residential upgrades, EV chargers, and smart electrical panels.",
+      "bio": "Licensed Master Electrician with 12+ years specializing in residential upgrades, EV chargers, AC circuit isolation, and smart electrical panels.",
       "createdAt": "2024-03-10T10:00:00Z"
     },
     {
@@ -30,7 +30,7 @@
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
       "phone": "+1 (555) 456-7890",
       "location": "Central & West Suburbs",
-      "bio": "Certified Journeyman Plumber focused on pipe diagnostics, tankless water heater installations, and emergency leak isolation.",
+      "bio": "Certified Journeyman Plumber focused on pipe diagnostics, tankless water heater installations, drain snaking, and emergency leak isolation.",
       "createdAt": "2024-05-18T11:30:00Z"
     },
     {
@@ -52,7 +52,7 @@
       "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
       "phone": "+1 (555) 678-9012",
       "location": "East District & Remote",
-      "bio": "CompTIA Network+ and Security+ Certified technician. Home mesh Wi-Fi optimization, malware removal, and desktop repairs.",
+      "bio": "CompTIA Network+ and Security+ Certified technician. Home mesh Wi-Fi optimization, malware removal, printer diagnostics, and desktop repairs.",
       "createdAt": "2024-09-12T14:20:00Z"
     },
     {
@@ -67,6 +67,182 @@
       "createdAt": "2024-11-05T12:00:00Z"
     },
     {
+      "id": "user-prov-6",
+      "email": "dr.aris.thorne@example.com",
+      "fullName": "Dr. Aris Thorne, MD",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 890-1234",
+      "location": "Metropolitan Medical District",
+      "bio": "Board-Certified Family Physician with 14 years clinical experience providing scheduled in-home medical health visits, chronic care management, and preventive consultations.",
+      "createdAt": "2024-06-11T09:00:00Z"
+    },
+    {
+      "id": "user-prov-7",
+      "email": "nurse.clara@example.com",
+      "fullName": "Clara Oswald, BSN, RN",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1594824813576-a4c3f59e5f58?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 901-2345",
+      "location": "Citywide Metro",
+      "bio": "Licensed Registered Nurse specialized in post-operative wound dressing, at-home IV therapy, vital monitoring, and routine phlebotomy sample collections.",
+      "createdAt": "2024-07-20T10:30:00Z"
+    },
+    {
+      "id": "user-prov-8",
+      "email": "metrocare.pharmacy@example.com",
+      "fullName": "MetroCare Pharmacy Logistics",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 012-3456",
+      "location": "Metro Distribution Center",
+      "bio": "State-Licensed Community Pharmacy delivering verified prescription medications, medical supplies, nebulizers, mobility aids, and temperature-monitored lab transports.",
+      "createdAt": "2024-08-15T08:00:00Z"
+    },
+    {
+      "id": "user-prov-9",
+      "email": "marcus.mechanic@example.com",
+      "fullName": "Marcus Vance Auto Diagnostics",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 123-9876",
+      "location": "North Suburbs & Mobile Van",
+      "bio": "ASE Master Certified Technician providing on-site OBD2 diagnostics, battery replacements, brake servicing, and roadside emergency assistance.",
+      "createdAt": "2024-09-05T13:00:00Z"
+    },
+    {
+      "id": "user-prov-10",
+      "email": "liam.carpenter@example.com",
+      "fullName": "Liam O'Connor",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 234-9012",
+      "location": "North Metro & Surrounding Counties",
+      "bio": "Master Carpenter with 16 years building architectural cabinetry, custom shelving, crown molding, interior doors, and structural wood repairs.",
+      "createdAt": "2024-04-12T09:00:00Z"
+    },
+    {
+      "id": "user-prov-11",
+      "email": "maria.santos@example.com",
+      "fullName": "Maria Santos",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 345-0123",
+      "location": "Citywide Metro (up to 35km)",
+      "bio": "Founder of EcoShine Cleaning. Bonded, insured, background-checked residential specialist using non-toxic botanical disinfectants for deep house and move-out sanitization.",
+      "createdAt": "2024-05-02T11:20:00Z"
+    },
+    {
+      "id": "user-prov-12",
+      "email": "kenji.sato@example.com",
+      "fullName": "Kenji Sato",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 456-1234",
+      "location": "Central & West Suburbs",
+      "bio": "Factory-certified appliance diagnostic engineer. Specialized in smart refrigerators, washing machines, gas/electric dryers, and dishwashers.",
+      "createdAt": "2024-06-18T14:10:00Z"
+    },
+    {
+      "id": "user-prov-13",
+      "email": "mateo.rossi@example.com",
+      "fullName": "Mateo Rossi",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 567-2345",
+      "location": "Greater Metro Area",
+      "bio": "Licensed painting contractor. High-precision interior room cut-ins, trim enamel, acoustic ceiling repairs, and seamless drywall patch restorations.",
+      "createdAt": "2024-07-22T08:45:00Z"
+    },
+    {
+      "id": "user-prov-14",
+      "email": "rachel.green@example.com",
+      "fullName": "Rachel Green",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 678-3456",
+      "location": "Metropolitan & Valley Districts",
+      "bio": "EPA-Certified Commercial Pest Applicator. Safe integrated pest management, child-and-pet friendly treatments, termite barriers, and rodent eradication.",
+      "createdAt": "2024-08-09T10:00:00Z"
+    },
+    {
+      "id": "user-prov-15",
+      "email": "vikram.patel@example.com",
+      "fullName": "Vikram Patel",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 789-4567",
+      "location": "North & East Suburbs",
+      "bio": "EPA 608 Universal Certified HVAC & Refrigeration Technician. Central AC seasonal service, ductless mini-split installs, heat pumps, and coolant leak tests.",
+      "createdAt": "2024-09-01T13:30:00Z"
+    },
+    {
+      "id": "user-prov-16",
+      "email": "oliver.green@example.com",
+      "fullName": "Oliver Green",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 890-5678",
+      "location": "Greater Metro & Hill Suburbs",
+      "bio": "Certified Arborist & Landscape Contractor. Aeration, organic fertilization, drip irrigation troubleshooting, tree pruning, and garden bed redesigns.",
+      "createdAt": "2024-09-14T09:15:00Z"
+    },
+    {
+      "id": "user-prov-17",
+      "email": "maya.lin@example.com",
+      "fullName": "Maya Lin",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 901-6789",
+      "location": "Central Metro & Downtown",
+      "bio": "State-certified Early Childhood Specialist & Pediatric First-Aid / CPR certified provider. Safe, engaging child supervision, homework aid, and neurodiversity support.",
+      "createdAt": "2024-10-01T15:00:00Z"
+    },
+    {
+      "id": "user-prov-18",
+      "email": "chloe.bennett@example.com",
+      "fullName": "Chloe Bennett",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 012-7890",
+      "location": "Citywide Metro",
+      "bio": "Certified Veterinary Technician (CVT). Low-stress mobile grooming, medication administration for cats and dogs, and dedicated pet sitting visits.",
+      "createdAt": "2024-10-15T12:00:00Z"
+    },
+    {
+      "id": "user-prov-19",
+      "email": "carlos.mendez@example.com",
+      "fullName": "Carlos Mendez",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 123-8901",
+      "location": "Metropolitan Transit Hub",
+      "bio": "Commercial Licensed Courier with accessible transport van. Secure chain-of-custody document delivery, bulky furniture transport, and medical non-emergency transit.",
+      "createdAt": "2024-11-01T10:45:00Z"
+    },
+    {
+      "id": "user-prov-20",
+      "email": "sophia.moreau@example.com",
+      "fullName": "Sophia Moreau",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 234-9012",
+      "location": "Uptown & In-Home Mobile",
+      "bio": "State-Licensed Massage Therapist (LMT) and certified somatic yoga practitioner. Therapeutic deep tissue, myofascial release, and posture alignment.",
+      "createdAt": "2024-11-10T16:20:00Z"
+    },
+    {
+      "id": "user-prov-21",
+      "email": "jonathan.reed@example.com",
+      "fullName": "Jonathan Reed, CPA",
+      "role": "provider",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+      "phone": "+1 (555) 345-0123",
+      "location": "Financial District & Virtual",
+      "bio": "Certified Public Accountant (CPA) with 15 years experience in personal tax planning, 1099/small business bookkeeping, IRS compliance, and strategic forecasting.",
+      "createdAt": "2024-11-20T11:00:00Z"
+    },
+    {
       "id": "user-admin-1",
       "email": "marcus.vance@humanhelp.org",
       "fullName": "Marcus Vance",
@@ -74,7 +250,7 @@
       "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
       "phone": "+1 (555) 999-0000",
       "location": "HumanHelp Operations Center",
-      "bio": "Senior Compliance & Trust Director overseeing provider credentials, platform dispute arbitration, and safety policies.",
+      "bio": "Senior Compliance & Trust Director overseeing provider credentials, medical licensing boards, platform dispute arbitration, and safety policies.",
       "createdAt": "2024-01-01T00:00:00Z"
     }
   ],
@@ -83,46 +259,300 @@
       "id": "cat-home",
       "slug": "home-services",
       "name": "Home Services",
-      "description": "Electricians, plumbers, carpenters, cleaning, and appliance repair specialists.",
+      "description": "Electricians, plumbers, carpenters, cleaning, appliance repair, pest control, AC repair, and landscaping.",
       "iconName": "Wrench",
       "requiresSpecialLicense": true,
-      "activeListingCount": 14
+      "isRegulated": true,
+      "subcategories": [
+        "Electricians",
+        "Plumbers",
+        "Carpenters",
+        "House cleaning",
+        "Appliance repair",
+        "Painting and maintenance",
+        "Pest control",
+        "AC and refrigerator repair",
+        "Gardening and landscaping"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "in_person"
+      ],
+      "activeListingCount": 18,
+      "isActive": true
+    },
+    {
+      "id": "cat-health",
+      "slug": "healthcare-services",
+      "name": "Healthcare Services",
+      "description": "Licensed family doctors, registered nurses, home nursing, physiotherapy, post-operative care, and home consultations.",
+      "iconName": "Activity",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "regulatoryNotice": "All healthcare providers require validated State Medical Board or Nursing Council credentials. HumanHelp is not an emergency medical service.",
+      "subcategories": [
+        "General practitioners and family doctors",
+        "Specialist doctors",
+        "Registered nurses",
+        "Home nursing care",
+        "Elderly care and assistance",
+        "Physiotherapists",
+        "Licensed mental health professionals",
+        "Post-operative home care",
+        "Medical attendants",
+        "Lab sample collection at home",
+        "Vaccination services",
+        "Home healthcare consultations"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "online_consultation",
+        "in_person"
+      ],
+      "activeListingCount": 14,
+      "isActive": true
+    },
+    {
+      "id": "cat-pharmacy",
+      "slug": "medical-pharmacy-delivery",
+      "name": "Medical & Pharmacy Delivery",
+      "description": "Prescription medicine delivery through licensed pharmacies, OTC supplies, mobility aids, and medical equipment.",
+      "iconName": "Truck",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "regulatoryNotice": "Prescription deliveries strictly verified through licensed retail pharmacies. Controlled substances subject to statutory verification.",
+      "subcategories": [
+        "Prescription medicine delivery",
+        "Over-the-counter medicine delivery",
+        "Medical equipment delivery",
+        "First-aid supplies delivery",
+        "Mobility aids and assistive equipment",
+        "Healthcare product delivery",
+        "Medical reports and documents delivery",
+        "Lab sample transportation",
+        "Medical supplies delivery"
+      ],
+      "allowedDeliveryModes": [
+        "delivery"
+      ],
+      "activeListingCount": 9,
+      "isActive": true
     },
     {
       "id": "cat-edu",
       "slug": "education-skills",
       "name": "Education & Skills",
-      "description": "Academic tutors, language coaches, STEM instructors, and music teachers.",
+      "description": "Academic tutors, math and science instructors, languages, music teachers, and coding trainers.",
       "iconName": "GraduationCap",
       "requiresSpecialLicense": false,
-      "activeListingCount": 9
+      "isRegulated": false,
+      "subcategories": [
+        "Academic tutors",
+        "Mathematics and science tutors",
+        "Language tutors",
+        "Music teachers",
+        "Computer trainers",
+        "Coding instructors",
+        "Professional skill trainers",
+        "Online tutors and mentors"
+      ],
+      "allowedDeliveryModes": [
+        "online_consultation",
+        "home_visit",
+        "in_person"
+      ],
+      "activeListingCount": 12,
+      "isActive": true
     },
     {
       "id": "cat-tech",
       "slug": "technology-support",
       "name": "Technology Support",
-      "description": "Computer diagnosis, home networking, cybersecurity setup, and device repair.",
+      "description": "Laptop/desktop repair, mobile repair, network setup, Wi-Fi optimization, and smart home setup.",
       "iconName": "Laptop",
       "requiresSpecialLicense": false,
-      "activeListingCount": 8
+      "isRegulated": false,
+      "subcategories": [
+        "Laptop and desktop repair",
+        "Mobile phone repair",
+        "Software installation and setup",
+        "Wi-Fi and network troubleshooting",
+        "Printer repair",
+        "Smart home setup",
+        "Remote technical support"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "online_consultation",
+        "in_person"
+      ],
+      "activeListingCount": 11,
+      "isActive": true
     },
     {
       "id": "cat-assist",
-      "slug": "everyday-assistance",
-      "name": "Everyday Assistance",
-      "description": "Furniture assembly, heavy moving help, local errands, and home organization.",
+      "slug": "personal-assistance",
+      "name": "Personal & Everyday Assistance",
+      "description": "Errand assistance, grocery shopping, household assistance, moving help, and home organization.",
       "iconName": "Package",
       "requiresSpecialLicense": false,
-      "activeListingCount": 6
+      "isRegulated": false,
+      "subcategories": [
+        "Errand assistance",
+        "Grocery shopping",
+        "Household assistance",
+        "Moving and packing help",
+        "Senior companionship",
+        "Personal organization",
+        "Laundry and ironing"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "in_person",
+        "delivery"
+      ],
+      "activeListingCount": 8,
+      "isActive": true
     },
     {
-      "id": "cat-care",
-      "slug": "care-services",
-      "name": "Care Services",
-      "description": "Elder assistance, non-medical companionship, and daily living support.",
-      "iconName": "HeartHandshake",
+      "id": "cat-transport",
+      "slug": "transportation-pickup",
+      "name": "Transportation & Pickup",
+      "description": "Parcel pickup, document delivery, moving assistance, and authorized non-emergency transport.",
+      "iconName": "Navigation",
       "requiresSpecialLicense": true,
-      "activeListingCount": 4
+      "isRegulated": true,
+      "subcategories": [
+        "Local parcel pickup and delivery",
+        "Document delivery",
+        "Furniture and small-item transport",
+        "Moving assistance",
+        "Authorized medical transportation",
+        "Accessible transportation services"
+      ],
+      "allowedDeliveryModes": [
+        "delivery",
+        "in_person"
+      ],
+      "activeListingCount": 6,
+      "isActive": true
+    },
+    {
+      "id": "cat-beauty",
+      "slug": "beauty-wellness",
+      "name": "Beauty & Wellness",
+      "description": "Hairdressers, barbers, makeup artists, licensed massage therapists, personal trainers, and yoga instructors.",
+      "iconName": "Sparkles",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "subcategories": [
+        "Hairdressers and barbers",
+        "Makeup artists",
+        "Beauty professionals",
+        "Massage therapists",
+        "Personal trainers",
+        "Yoga instructors",
+        "Wellness coaches"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "in_person"
+      ],
+      "activeListingCount": 7,
+      "isActive": true
+    },
+    {
+      "id": "cat-auto",
+      "slug": "automotive-services",
+      "name": "Automotive Services",
+      "description": "Mechanics, diagnostics, tire replacement, car detailing, battery assistance, and roadside support.",
+      "iconName": "Car",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "subcategories": [
+        "Mechanics",
+        "Vehicle diagnostics",
+        "Tire replacement and repair",
+        "Car washing and detailing",
+        "Battery assistance",
+        "Roadside assistance"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "in_person"
+      ],
+      "activeListingCount": 8,
+      "isActive": true
+    },
+    {
+      "id": "cat-pro",
+      "slug": "professional-services",
+      "name": "Professional & Business Services",
+      "description": "Certified accountants, tax pros, legal consultants, graphic designers, and software engineers.",
+      "iconName": "Briefcase",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "subcategories": [
+        "Accountants and tax professionals",
+        "Legal professionals",
+        "Graphic designers",
+        "Web developers",
+        "Software developers",
+        "Digital marketing specialists",
+        "Business consultants",
+        "Translation and transcription services"
+      ],
+      "allowedDeliveryModes": [
+        "online_consultation",
+        "in_person"
+      ],
+      "activeListingCount": 10,
+      "isActive": true
+    },
+    {
+      "id": "cat-pet",
+      "slug": "pet-care",
+      "name": "Pet Care",
+      "description": "Pet grooming, pet sitting, dog walking, boarding, veterinary appointments, and pet supplies.",
+      "iconName": "PawPrint",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "subcategories": [
+        "Pet grooming",
+        "Pet sitting",
+        "Dog walking",
+        "Pet boarding",
+        "Veterinary appointments",
+        "Pet supply delivery"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit",
+        "in_person",
+        "delivery"
+      ],
+      "activeListingCount": 6,
+      "isActive": true
+    },
+    {
+      "id": "cat-child",
+      "slug": "child-family-care",
+      "name": "Child & Family Care",
+      "description": "Qualified babysitters, childcare providers, special-needs support, and family assistance.",
+      "iconName": "ShieldAlert",
+      "requiresSpecialLicense": true,
+      "isRegulated": true,
+      "regulatoryNotice": "Subject to identity verification, background check clearances, and pediatric first-aid certification.",
+      "subcategories": [
+        "Qualified babysitters",
+        "Childcare providers",
+        "Special-needs support providers",
+        "Family assistance services"
+      ],
+      "allowedDeliveryModes": [
+        "home_visit"
+      ],
+      "activeListingCount": 5,
+      "isActive": true
     }
   ],
   "providers": [
@@ -131,10 +561,14 @@
       "userId": "user-prov-1",
       "businessName": "Chen Precision Electrical LLC",
       "tagline": "Master Electrician with transparent pricing & safety-certified workmanship.",
-      "bio": "Over a decade of hands-on experience covering modern electrical panels, EV charging circuits, rewiring, and safety inspections. Every project strictly follows National Electrical Code standards.",
+      "bio": "Over a decade of hands-on experience covering modern electrical panels, EV charging circuits, rewiring, AC disconnects, and safety inspections. Every project strictly follows National Electrical Code standards.",
       "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
       "categories": [
         "cat-home"
+      ],
+      "subcategories": [
+        "Electricians",
+        "AC and refrigerator repair"
       ],
       "serviceArea": "Greater Metro & Suburbs (up to 30km)",
       "serviceRadiusKm": 30,
@@ -146,7 +580,7 @@
         "Panel Upgrades",
         "EV Charger Install",
         "Rewiring",
-        "Code Compliance",
+        "AC Disconnects",
         "Troubleshooting"
       ],
       "verificationStatus": "credentials_checked",
@@ -174,10 +608,14 @@
       "userId": "user-prov-2",
       "businessName": "Miller Flow Plumbing Solutions",
       "tagline": "Reliable, clean plumbing repair with zero hidden dispatch fees.",
-      "bio": "Specialized in leak repairs, pipe inspections, water filtration systems, and water heater replacements. Transparent hourly rates with upfront estimate confirmation before turning a single wrench.",
+      "bio": "Specialized in leak repairs, pipe inspections, water filtration systems, water heaters, and drain snaking. Transparent hourly rates with upfront estimate confirmation before turning a single wrench.",
       "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       "categories": [
         "cat-home"
+      ],
+      "subcategories": [
+        "Plumbers",
+        "Appliance repair"
       ],
       "serviceArea": "Central Metro & West Valley (up to 25km)",
       "serviceRadiusKm": 25,
@@ -223,6 +661,10 @@
       "categories": [
         "cat-edu"
       ],
+      "subcategories": [
+        "Academic tutors",
+        "Mathematics and science tutors"
+      ],
       "serviceArea": "Worldwide (Online / Remote)",
       "serviceRadiusKm": 100,
       "languages": [
@@ -267,6 +709,11 @@
       "categories": [
         "cat-tech"
       ],
+      "subcategories": [
+        "Wi-Fi and network troubleshooting",
+        "Laptop and desktop repair",
+        "Smart home setup"
+      ],
       "serviceArea": "Metro Citywide + Remote Support",
       "serviceRadiusKm": 35,
       "languages": [
@@ -308,7 +755,13 @@
       "bio": "Dedicated to helping older adults maintain independence, dignity, and joy in their own homes. Friendly conversation, grocery trips, medication reminders, and gentle exercise support.",
       "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
       "categories": [
-        "cat-care"
+        "cat-assist",
+        "cat-health"
+      ],
+      "subcategories": [
+        "Senior companionship",
+        "Elderly care and assistance",
+        "Errand assistance"
       ],
       "serviceArea": "South Metro & Central (up to 20km)",
       "serviceRadiusKm": 20,
@@ -341,6 +794,785 @@
       ],
       "workingHoursStart": "08:30",
       "workingHoursEnd": "16:30"
+    },
+    {
+      "id": "prov-profile-6",
+      "userId": "user-prov-6",
+      "businessName": "Dr. Aris Thorne — Home Family Medicine",
+      "tagline": "Board-Certified Family Physician offering attentive home healthcare visits.",
+      "bio": "Providing comprehensive, non-rushed clinical visits directly in patient homes. Routine wellness examinations, management of high blood pressure and diabetes, post-discharge evaluations, and palliative care support.",
+      "avatarUrl": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-health"
+      ],
+      "subcategories": [
+        "General practitioners and family doctors",
+        "Home healthcare consultations",
+        "Post-operative home care"
+      ],
+      "serviceArea": "Metropolitan District & Inner Suburbs (up to 25km)",
+      "serviceRadiusKm": 25,
+      "languages": [
+        "English",
+        "Greek"
+      ],
+      "skills": [
+        "Clinical Assessment",
+        "Chronic Disease Care",
+        "Home Doctor Visits",
+        "Geriatric Health",
+        "Preventive Care"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Verified Medical Board License #MD-481920",
+      "verificationDetails": "Active State Board of Medical Licensure registration verified. Active medical malpractice coverage on file.",
+      "isMedicalProfessional": true,
+      "licenseBoard": "State Board of Medicine",
+      "registeredBodyNumber": "MD-481920",
+      "rating": 4.97,
+      "reviewCount": 31,
+      "completedBookingsCount": 36,
+      "isAcceptingBookings": true,
+      "startingRate": 140,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "workingHoursStart": "09:00",
+      "workingHoursEnd": "17:00"
+    },
+    {
+      "id": "prov-profile-7",
+      "userId": "user-prov-7",
+      "businessName": "Clara Oswald, BSN, RN — Clinical Home Nursing",
+      "tagline": "Licensed Registered Nurse for post-operative care, IV therapy & wound dressing.",
+      "bio": "Over 9 years of hospital and visiting nurse service experience. Specialized in post-surgical wound care, drain management, phlebotomy lab collection at home, and medication regimen education.",
+      "avatarUrl": "https://images.unsplash.com/photo-1594824813576-a4c3f59e5f58?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-health"
+      ],
+      "subcategories": [
+        "Registered nurses",
+        "Home nursing care",
+        "Post-operative home care",
+        "Lab sample collection at home"
+      ],
+      "serviceArea": "Metro Citywide (up to 30km)",
+      "serviceRadiusKm": 30,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "Post-Op Nursing",
+        "Wound Dressing",
+        "Phlebotomy",
+        "Vital Monitoring",
+        "Injection Administration"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "Verified Registered Nurse License #RN-77291",
+      "verificationDetails": "State Board of Nursing RN license verified active with multi-state privilege.",
+      "isMedicalProfessional": true,
+      "licenseBoard": "State Board of Nursing",
+      "registeredBodyNumber": "RN-77291",
+      "rating": 4.96,
+      "reviewCount": 27,
+      "completedBookingsCount": 32,
+      "isAcceptingBookings": true,
+      "startingRate": 75,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 15,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "18:00"
+    },
+    {
+      "id": "prov-profile-8",
+      "userId": "user-prov-8",
+      "businessName": "MetroCare Pharmacy & Medical Logistics",
+      "tagline": "Authorized pharmacy prescription delivery, mobility aids & medical equipment.",
+      "bio": "Licensed pharmacy fulfillment service ensuring secure, temperature-controlled delivery of authorized prescriptions, oxygen concentrators, wheelchairs, and post-discharge surgical kits.",
+      "avatarUrl": "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-pharmacy"
+      ],
+      "subcategories": [
+        "Prescription medicine delivery",
+        "Over-the-counter medicine delivery",
+        "Medical equipment delivery",
+        "Mobility aids and assistive equipment"
+      ],
+      "serviceArea": "Metro Citywide Express Delivery",
+      "serviceRadiusKm": 40,
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "skills": [
+        "Prescription Delivery",
+        "Cold-Chain Transport",
+        "Nebulizer Setup",
+        "Wheelchair Delivery",
+        "First Aid Kits"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Verified Pharmacy License #PH-99210",
+      "verificationDetails": "State Board of Pharmacy Retail & Courier License #PH-99210 verified.",
+      "isMedicalProfessional": false,
+      "rating": 4.92,
+      "reviewCount": 44,
+      "completedBookingsCount": 58,
+      "isAcceptingBookings": true,
+      "startingRate": 15,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 30,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "21:00"
+    },
+    {
+      "id": "prov-profile-9",
+      "userId": "user-prov-9",
+      "businessName": "Marcus Precision Mobile Auto Mechanics",
+      "tagline": "ASE Master Certified mobile vehicle diagnostics, battery & brake service.",
+      "bio": "We bring the garage to your driveway. Complete computer OBD2 scans, alternator replacement, starter motor repair, and mobile oil/brake servicing with itemized transparent pricing.",
+      "avatarUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-auto"
+      ],
+      "subcategories": [
+        "Mechanics",
+        "Vehicle diagnostics",
+        "Battery assistance",
+        "Roadside assistance"
+      ],
+      "serviceArea": "Metro West & North Suburbs (up to 35km)",
+      "serviceRadiusKm": 35,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "OBD2 Diagnostics",
+        "Brake Systems",
+        "Battery Replacement",
+        "Alternators",
+        "Roadside Assistance"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "ASE Master Technician #ASE-51203",
+      "verificationDetails": "National Institute for Automotive Service Excellence (ASE) Master certification verified.",
+      "rating": 4.89,
+      "reviewCount": 35,
+      "completedBookingsCount": 41,
+      "isAcceptingBookings": true,
+      "startingRate": 80,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "07:30",
+      "workingHoursEnd": "18:30"
+    },
+    {
+      "id": "prov-profile-10",
+      "userId": "user-prov-10",
+      "businessName": "O'Connor Artisan Carpentry & Custom Woodwork LLC",
+      "tagline": "Master finish carpentry, custom architectural cabinetry & repair.",
+      "bio": "16+ years of fine woodworking expertise. Specializing in built-in shelving, cabinet refacing, solid wood door fitting, baseboard & crown molding, and structural repairs.",
+      "avatarUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "Carpenters",
+        "Painting and maintenance"
+      ],
+      "serviceArea": "North Metro & Surrounding Counties (up to 30km)",
+      "serviceRadiusKm": 30,
+      "languages": [
+        "English",
+        "Gaelic"
+      ],
+      "skills": [
+        "Custom Cabinetry",
+        "Crown Molding",
+        "Door Hanging",
+        "Finish Carpentry",
+        "Wood Restoration"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "Verified Master Carpenter #CARP-4421",
+      "verificationDetails": "Master Woodworkers Guild license verified, $1M general liability insurance on record.",
+      "rating": 4.97,
+      "reviewCount": 32,
+      "completedBookingsCount": 38,
+      "isAcceptingBookings": true,
+      "startingRate": 85,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "17:00"
+    },
+    {
+      "id": "prov-profile-11",
+      "userId": "user-prov-11",
+      "businessName": "EcoShine Residential Deep Cleaning & Sanitization",
+      "tagline": "Bonded & insured botanical deep house cleaning and move-in prep.",
+      "bio": "Complete home deep cleaning with zero harsh fumes. We disinfect kitchens, grout, interior appliances, baseboards, and bathrooms using hospital-grade botanical solutions.",
+      "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "House cleaning",
+        "Painting and maintenance"
+      ],
+      "serviceArea": "Citywide Metro (up to 35km)",
+      "serviceRadiusKm": 35,
+      "languages": [
+        "English",
+        "Spanish",
+        "Portuguese"
+      ],
+      "skills": [
+        "Deep Sanitization",
+        "Move-Out Cleaning",
+        "Grout Steaming",
+        "Eco-Friendly Disinfection",
+        "Baseboard Detailing"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Bonded & Insured Cleaner #CLEAN-88310",
+      "verificationDetails": "Commercial janitorial bonding, clean background audit, and business registration verified.",
+      "rating": 4.94,
+      "reviewCount": 51,
+      "completedBookingsCount": 64,
+      "isAcceptingBookings": true,
+      "startingRate": 45,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 15,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "18:00"
+    },
+    {
+      "id": "prov-profile-12",
+      "userId": "user-prov-12",
+      "businessName": "Sato Certified Major Appliance Diagnostics",
+      "tagline": "Factory-trained technician for refrigerators, washers, dryers & ovens.",
+      "bio": "Fast diagnostic isolation of refrigerator cooling faults, washing machine balance errors, dryer heating elements, and smart dishwasher logic boards with 90-day parts warranty.",
+      "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "Appliance repair",
+        "AC and refrigerator repair"
+      ],
+      "serviceArea": "Central & West Suburbs (up to 25km)",
+      "serviceRadiusKm": 25,
+      "languages": [
+        "English",
+        "Japanese"
+      ],
+      "skills": [
+        "Refrigerator Cooling",
+        "Washer Diagnostics",
+        "Dryer Heating Coils",
+        "Oven Controls",
+        "Dishwasher Leaks"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "EPA Universal Appliance Tech #APP-31048",
+      "verificationDetails": "Universal Section 608 & Major Appliance Service National Certification verified.",
+      "rating": 4.91,
+      "reviewCount": 26,
+      "completedBookingsCount": 31,
+      "isAcceptingBookings": true,
+      "startingRate": 75,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 25,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "08:30",
+      "workingHoursEnd": "17:30"
+    },
+    {
+      "id": "prov-profile-13",
+      "userId": "user-prov-13",
+      "businessName": "Rossi Precision Architectural Painting & Drywall",
+      "tagline": "Flawless interior paint finishes, trim enamel & drywall matching.",
+      "bio": "Residential painting done right. Razor-sharp trim edges, dustless sanding, ceiling patch repairs, water damage restoration, and durable exterior wood staining.",
+      "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "Painting and maintenance",
+        "Carpenters"
+      ],
+      "serviceArea": "Greater Metro Area (up to 30km)",
+      "serviceRadiusKm": 30,
+      "languages": [
+        "English",
+        "Italian"
+      ],
+      "skills": [
+        "Interior Painting",
+        "Drywall Repair",
+        "Trim Enamel",
+        "Texture Matching",
+        "Ceiling Patching"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Licensed Painting Contractor #PT-77104",
+      "verificationDetails": "State trade license and active commercial liability policy validated.",
+      "rating": 4.89,
+      "reviewCount": 30,
+      "completedBookingsCount": 36,
+      "isAcceptingBookings": true,
+      "startingRate": 70,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 30,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "17:00"
+    },
+    {
+      "id": "prov-profile-14",
+      "userId": "user-prov-14",
+      "businessName": "EcoGuard EPA-Certified Pest Elimination",
+      "tagline": "Child and pet-friendly targeted pest management & termite defense.",
+      "bio": "Targeted elimination of ants, wasps, rodents, roaches, and bedbugs without spraying hazardous chemicals across living areas. Full perimeter termite protection inspections.",
+      "avatarUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "Pest control"
+      ],
+      "serviceArea": "Metropolitan & Valley Districts (up to 35km)",
+      "serviceRadiusKm": 35,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "Eco IPM",
+        "Termite Defense",
+        "Rodent Exclusion",
+        "Wasp Removal",
+        "Safe Bedbug Treatments"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "EPA Commercial Applicator #PEST-90412",
+      "verificationDetails": "Department of Agriculture Pest Regulatory Board active pesticide applicator credential verified.",
+      "rating": 4.96,
+      "reviewCount": 42,
+      "completedBookingsCount": 49,
+      "isAcceptingBookings": true,
+      "startingRate": 120,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "18:00"
+    },
+    {
+      "id": "prov-profile-15",
+      "userId": "user-prov-15",
+      "businessName": "CoolFlow HVAC & Refrigeration Engineering",
+      "tagline": "Master AC tune-ups, heat pump installs & refrigerant leak repairs.",
+      "bio": "Keep your home cool and efficient. We troubleshoot ductless mini-splits, central AC condensers, capacitors, evaporator coils, and commercial walk-in refrigeration units.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "AC and refrigerator repair",
+        "Appliance repair"
+      ],
+      "serviceArea": "North & East Suburbs (up to 30km)",
+      "serviceRadiusKm": 30,
+      "languages": [
+        "English",
+        "Gujarati"
+      ],
+      "skills": [
+        "Central AC",
+        "Heat Pumps",
+        "Refrigerant Leaks",
+        "Capacitor Replacement",
+        "Mini-Split Systems"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "EPA 608 Universal HVAC License #HVAC-55281",
+      "verificationDetails": "State Mechanical Contractor Board licensure and EPA Section 608 Universal Certification active.",
+      "rating": 4.93,
+      "reviewCount": 39,
+      "completedBookingsCount": 45,
+      "isAcceptingBookings": true,
+      "startingRate": 90,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 15,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "07:30",
+      "workingHoursEnd": "18:30"
+    },
+    {
+      "id": "prov-profile-16",
+      "userId": "user-prov-16",
+      "businessName": "Verdant Living Landscape & Tree Arborist Care",
+      "tagline": "Certified arborist tree pruning, seasonal aeration & sprinkler repair.",
+      "bio": "Organic lawn revitalization, precision hedge sculpting, drip irrigation repair, hazardous branch pruning, and beautiful native garden redesigns.",
+      "avatarUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-home"
+      ],
+      "subcategories": [
+        "Gardening and landscaping"
+      ],
+      "serviceArea": "Greater Metro & Hill Suburbs (up to 35km)",
+      "serviceRadiusKm": 35,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "Arborist Pruning",
+        "Lawn Aeration",
+        "Sprinkler Repair",
+        "Xeriscaping",
+        "Soil Amendments"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Certified Arborist #LAND-61023",
+      "verificationDetails": "International Society of Arboriculture (ISA) credential and contractor insurance checked.",
+      "rating": 4.92,
+      "reviewCount": 28,
+      "completedBookingsCount": 33,
+      "isAcceptingBookings": true,
+      "startingRate": 65,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 30,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "07:00",
+      "workingHoursEnd": "17:00"
+    },
+    {
+      "id": "prov-profile-17",
+      "userId": "user-prov-17",
+      "businessName": "Little Sprout Certified Childcare & Pediatric Support",
+      "tagline": "State-certified pediatric first aid provider for in-home babysitting & sensory care.",
+      "bio": "Patient, attentive childcare provider with 8 years experience in early childhood education. Certified in pediatric CPR, AED, and infant first aid. Experience with ADHD and sensory sensitivities.",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-child"
+      ],
+      "subcategories": [
+        "Qualified babysitters",
+        "Childcare providers",
+        "Special-needs support providers"
+      ],
+      "serviceArea": "Central Metro & Downtown (up to 20km)",
+      "serviceRadiusKm": 20,
+      "languages": [
+        "English",
+        "Mandarin"
+      ],
+      "skills": [
+        "Pediatric First Aid",
+        "Infant Care",
+        "Sensory Activities",
+        "Early Literacy",
+        "Homework Help"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Verified Pediatric CPR & Background Clear #CHILD-20231",
+      "verificationDetails": "Red Cross Pediatric CPR/AED certification & clean federal TrustLine fingerprint clearance.",
+      "rating": 4.98,
+      "reviewCount": 25,
+      "completedBookingsCount": 30,
+      "isAcceptingBookings": true,
+      "startingRate": 35,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "20:00"
+    },
+    {
+      "id": "prov-profile-18",
+      "userId": "user-prov-18",
+      "businessName": "Paws & Gentle Care Veterinary Nursing & Grooming",
+      "tagline": "Certified Veterinary Technician for in-home pet sitting, meds & mobile grooming.",
+      "bio": "Veterinary technician providing calm, fear-free pet care in your pet’s comforting home environment. Routine coat grooming, ear cleaning, nail trims, diabetic insulin shots, and gentle walking.",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-pet"
+      ],
+      "subcategories": [
+        "Pet grooming",
+        "Pet sitting",
+        "Dog walking",
+        "Pet boarding"
+      ],
+      "serviceArea": "Citywide Metro (up to 25km)",
+      "serviceRadiusKm": 25,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "Veterinary Tech",
+        "Stress-Free Grooming",
+        "Insulin Administration",
+        "Dog Walking",
+        "Post-Op Pet Care"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "Certified Vet Technician #VET-88491",
+      "verificationDetails": "State Veterinary Medical Board Registered Veterinary Technician credential verified.",
+      "rating": 4.97,
+      "reviewCount": 34,
+      "completedBookingsCount": 42,
+      "isAcceptingBookings": true,
+      "startingRate": 30,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 15,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "workingHoursStart": "08:00",
+      "workingHoursEnd": "19:00"
+    },
+    {
+      "id": "prov-profile-19",
+      "userId": "user-prov-19",
+      "businessName": "SafeRoute Secure Courier & Accessible Transit Logistics",
+      "tagline": "Licensed commercial courier for documents, bulky cargo & mobility transit.",
+      "bio": "Equipped with a wheelchair-accessible clean van and lockbox security. Safe transport of time-critical legal papers, delicate medical equipment, and non-emergency wheelchair medical transit.",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-transport"
+      ],
+      "subcategories": [
+        "Local parcel pickup and delivery",
+        "Document delivery",
+        "Furniture and small-item transport",
+        "Authorized medical transportation"
+      ],
+      "serviceArea": "Metropolitan Transit Hub & Suburbs (up to 40km)",
+      "serviceRadiusKm": 40,
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "skills": [
+        "Secure Courier",
+        "Wheelchair Lift",
+        "Chain of Custody",
+        "Furniture Moving",
+        "Medical Transit"
+      ],
+      "verificationStatus": "credentials_checked",
+      "verificationBadgeLabel": "Commercial Carrier Authority #DOT-918230",
+      "verificationDetails": "Department of Transportation commercial motor carrier license and vehicle inspection verified.",
+      "rating": 4.9,
+      "reviewCount": 27,
+      "completedBookingsCount": 35,
+      "isAcceptingBookings": true,
+      "startingRate": 25,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 20,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "07:00",
+      "workingHoursEnd": "20:00"
+    },
+    {
+      "id": "prov-profile-20",
+      "userId": "user-prov-20",
+      "businessName": "Serenity Mobile Massage & Holistic Wellness Studio",
+      "tagline": "State-Licensed Massage Therapist for restorative deep tissue & private yoga.",
+      "bio": "Bringing restorative therapy directly to your home with a sanitized hydraulic table, organic aromatherapy, and hot stones. Specializing in chronic neck/back tension and personalized postural yoga.",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-beauty"
+      ],
+      "subcategories": [
+        "Massage therapists",
+        "Yoga instructors",
+        "Wellness coaches"
+      ],
+      "serviceArea": "Uptown & In-Home Mobile (up to 25km)",
+      "serviceRadiusKm": 25,
+      "languages": [
+        "English",
+        "French"
+      ],
+      "skills": [
+        "Deep Tissue Massage",
+        "Swedish Massage",
+        "Myofascial Release",
+        "Posture Yoga",
+        "Breathwork"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Licensed Massage Therapist #LMT-38190",
+      "verificationDetails": "State Board of Massage Therapy active license and ABMP professional liability coverage verified.",
+      "rating": 4.99,
+      "reviewCount": 41,
+      "completedBookingsCount": 52,
+      "isAcceptingBookings": true,
+      "startingRate": 95,
+      "pricingType": "fixed",
+      "responseTimeMinutes": 25,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "workingHoursStart": "09:00",
+      "workingHoursEnd": "20:00"
+    },
+    {
+      "id": "prov-profile-21",
+      "userId": "user-prov-21",
+      "businessName": "Reed Strategic Financial Advisory & Certified Public Accountant",
+      "tagline": "Licensed CPA for small business accounting, tax preparation & IRS compliance.",
+      "bio": "Helping individuals, freelancers, and growing businesses optimize deductions, organize clean balance sheets, file federal and state tax filings, and navigate tax planning with zero stress.",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      "categories": [
+        "cat-pro"
+      ],
+      "subcategories": [
+        "Accountants and tax professionals",
+        "Business consultants"
+      ],
+      "serviceArea": "Financial District & Remote Consultation",
+      "serviceRadiusKm": 100,
+      "languages": [
+        "English"
+      ],
+      "skills": [
+        "Corporate Tax",
+        "Individual 1040",
+        "Bookkeeping",
+        "IRS Representation",
+        "Cashflow Modeling"
+      ],
+      "verificationStatus": "category_verified",
+      "verificationBadgeLabel": "Licensed CPA #CPA-40192",
+      "verificationDetails": "State Board of Accountancy CPA license validated in good standing.",
+      "rating": 4.96,
+      "reviewCount": 29,
+      "completedBookingsCount": 37,
+      "isAcceptingBookings": true,
+      "startingRate": 110,
+      "pricingType": "hourly",
+      "responseTimeMinutes": 30,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "workingHoursStart": "09:00",
+      "workingHoursEnd": "18:00"
     }
   ],
   "services": [
@@ -348,12 +1580,14 @@
       "id": "srv-101",
       "providerId": "prov-profile-1",
       "categoryId": "cat-home",
+      "subcategory": "Electricians",
       "title": "Standard Electrical Diagnostic & Repair",
       "description": "Thorough inspection of flickering circuits, malfunctioning outlets, tripped breakers, or switch failures. Includes 1 full hour of troubleshooting and minor part fixes.",
       "pricingModel": "hourly",
       "basePrice": 85,
       "durationMinutes": 60,
       "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
       "remoteAvailable": false,
       "inPersonAvailable": true,
       "requirements": "Customer must provide clear access to the main circuit breaker panel.",
@@ -364,12 +1598,14 @@
       "id": "srv-102",
       "providerId": "prov-profile-1",
       "categoryId": "cat-home",
+      "subcategory": "Electricians",
       "title": "Dedicated EV Charger Installation (Level 2)",
       "description": "Complete 240V 50-amp dedicated conduit installation, circuit breaker integration, wall unit mounting, and local code permit assistance.",
       "pricingModel": "fixed",
       "basePrice": 580,
       "durationMinutes": 180,
       "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
       "remoteAvailable": false,
       "inPersonAvailable": true,
       "requirements": "200-amp service recommended. Please share photo of current breaker panel.",
@@ -380,12 +1616,14 @@
       "id": "srv-201",
       "providerId": "prov-profile-2",
       "categoryId": "cat-home",
+      "subcategory": "Plumbers",
       "title": "Emergency Leak Repair & Pipe Sealing",
       "description": "Rapid on-site isolation and repair of leaking copper, PEX, or PVC supply lines, faucet seals, or trap assemblies.",
       "pricingModel": "hourly",
       "basePrice": 90,
       "durationMinutes": 90,
       "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
       "remoteAvailable": false,
       "inPersonAvailable": true,
       "requirements": "Locate main water shut-off valve prior to arrival if active flooding is taking place.",
@@ -396,12 +1634,14 @@
       "id": "srv-301",
       "providerId": "prov-profile-3",
       "categoryId": "cat-edu",
+      "subcategory": "Mathematics and science tutors",
       "title": "1-on-1 Advanced Calculus & Linear Algebra Mastery",
       "description": "Interactive 60-minute virtual session focusing on deep conceptual comprehension, rigorous problem sets, exam preparation, and customized review worksheets.",
       "pricingModel": "hourly",
       "basePrice": 60,
       "durationMinutes": 60,
       "serviceRadiusKm": 100,
+      "deliveryMode": "online_consultation",
       "remoteAvailable": true,
       "inPersonAvailable": false,
       "requirements": "A computer or tablet with microphone and camera. Digital stylus recommended.",
@@ -412,12 +1652,14 @@
       "id": "srv-401",
       "providerId": "prov-profile-4",
       "categoryId": "cat-tech",
+      "subcategory": "Wi-Fi and network troubleshooting",
       "title": "Whole-Home Mesh Wi-Fi Setup & Dead-Zone Elimination",
       "description": "On-site spectrum analysis, placement of mesh nodes, network security configuration, and parental controls setup.",
       "pricingModel": "fixed",
       "basePrice": 150,
       "durationMinutes": 120,
       "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
       "remoteAvailable": false,
       "inPersonAvailable": true,
       "requirements": "Customer provides their mesh Wi-Fi system hardware or consults Tariq beforehand.",
@@ -427,16 +1669,452 @@
     {
       "id": "srv-501",
       "providerId": "prov-profile-5",
-      "categoryId": "cat-care",
+      "categoryId": "cat-assist",
+      "subcategory": "Senior companionship",
       "title": "Companion Care & Daily Living Support (2-Hour Block)",
       "description": "Attentive companionship, meal preparation, accompaniment on doctor appointments or grocery runs, and light household organization.",
       "pricingModel": "fixed",
       "basePrice": 80,
       "durationMinutes": 120,
       "serviceRadiusKm": 20,
+      "deliveryMode": "home_visit",
       "remoteAvailable": false,
       "inPersonAvailable": true,
       "requirements": "Non-medical care only. Care recipient must be in stable condition.",
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-601",
+      "providerId": "prov-profile-6",
+      "categoryId": "cat-health",
+      "subcategory": "General practitioners and family doctors",
+      "title": "Comprehensive In-Home Family Doctor Visit",
+      "description": "In-home non-emergency clinical consultation by Board-Certified Physician. Full physical exam, medication review, vital diagnostics, and care coordination. (Emergency conditions must call 911/112).",
+      "pricingModel": "fixed",
+      "basePrice": 150,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Adult patient present. Have current prescription bottles and recent clinical discharge summary available.",
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-701",
+      "providerId": "prov-profile-7",
+      "categoryId": "cat-health",
+      "subcategory": "Post-operative home care",
+      "title": "Post-Operative Wound Care & Clinical Nursing Visit",
+      "description": "Sterile surgical site inspection, dressing change, surgical drain measurement, pain regimen assessment, and clinical vital sign monitoring by Registered Nurse.",
+      "pricingModel": "hourly",
+      "basePrice": 75,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Discharge instructions from surgical clinic must be provided.",
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-801",
+      "providerId": "prov-profile-8",
+      "categoryId": "cat-pharmacy",
+      "subcategory": "Prescription medicine delivery",
+      "title": "Verified Same-Day Prescription Delivery & Consultation",
+      "description": "Direct courier delivery of validated pharmacy prescription from retail partner in tamper-evident sealed packaging. Includes optional phone consultation with licensed pharmacist.",
+      "pricingModel": "fixed",
+      "basePrice": 18,
+      "durationMinutes": 45,
+      "serviceRadiusKm": 40,
+      "deliveryMode": "delivery",
+      "remoteAvailable": false,
+      "inPersonAvailable": false,
+      "requiresPrescription": true,
+      "requirements": "Valid prescription on file with pharmacy. Photo ID matching patient required at handover.",
+      "cancellationPolicy": "Cancellations accepted prior to dispatch.",
+      "isActive": true
+    },
+    {
+      "id": "srv-901",
+      "providerId": "prov-profile-9",
+      "categoryId": "cat-auto",
+      "subcategory": "Vehicle diagnostics",
+      "title": "Mobile On-Site OBD2 Computer Diagnostic & Battery Test",
+      "description": "Technician arrives at your home/office with professional scanner to isolate Check Engine lights, sensor faults, charging system voltage, and battery health.",
+      "pricingModel": "fixed",
+      "basePrice": 80,
+      "durationMinutes": 45,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Vehicle parked on safe, level ground with hood accessible.",
+      "cancellationPolicy": "Free cancellation up to 4 hours in advance.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1001",
+      "providerId": "prov-profile-10",
+      "categoryId": "cat-home",
+      "subcategory": "Carpenters",
+      "title": "Custom Built-In Cabinetry & Shelving Assembly",
+      "description": "Precision on-site measuring, fabrication, and structural anchoring of custom wall shelving, pantries, closets, or entertainment built-ins.",
+      "pricingModel": "hourly",
+      "basePrice": 85,
+      "durationMinutes": 120,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Provide clear wall measurements and unobstructed work area.",
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1002",
+      "providerId": "prov-profile-10",
+      "categoryId": "cat-home",
+      "subcategory": "Carpenters",
+      "title": "Interior Solid Door Hanging & Architectural Trim Fit",
+      "description": "Professional hinge routing, jamb alignment, door latch setting, and seamless mitered trim casing installation.",
+      "pricingModel": "fixed",
+      "basePrice": 220,
+      "durationMinutes": 90,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1101",
+      "providerId": "prov-profile-11",
+      "categoryId": "cat-home",
+      "subcategory": "House cleaning",
+      "title": "Whole-Home Botanical Deep Cleaning & Sanitization",
+      "description": "Hospital-grade non-toxic deep sanitization of all surfaces, grout steam-cleaning, interior oven/fridge degreasing, bathroom descaling, and high-dusting.",
+      "pricingModel": "fixed",
+      "basePrice": 160,
+      "durationMinutes": 180,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Running water and electricity must be active at residence.",
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1102",
+      "providerId": "prov-profile-11",
+      "categoryId": "cat-home",
+      "subcategory": "House cleaning",
+      "title": "Routine Recurring Eco-Friendly Maid Service (2 Hours)",
+      "description": "Mopping, vacuuming, kitchen surface wipe-downs, linen changes, and dusting using organic botanical essential oils.",
+      "pricingModel": "hourly",
+      "basePrice": 45,
+      "durationMinutes": 120,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1201",
+      "providerId": "prov-profile-12",
+      "categoryId": "cat-home",
+      "subcategory": "Appliance repair",
+      "title": "Smart Refrigerator & Freezer Diagnostic & Compressor Test",
+      "description": "Comprehensive digital troubleshooting of condenser coils, defrost heaters, thermistors, evaporator fans, and ice makers. Fee waived with repair authorization.",
+      "pricingModel": "fixed",
+      "basePrice": 75,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 4 hours in advance.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1202",
+      "providerId": "prov-profile-12",
+      "categoryId": "cat-home",
+      "subcategory": "Appliance repair",
+      "title": "Washing Machine & Dryer Motor / Belt Repair",
+      "description": "Repair of screeching drums, spin-cycle drainage errors, drive belts, heating coils, thermal fuses, and water inlet solenoids.",
+      "pricingModel": "hourly",
+      "basePrice": 85,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 4 hours in advance.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1301",
+      "providerId": "prov-profile-13",
+      "categoryId": "cat-home",
+      "subcategory": "Painting and maintenance",
+      "title": "Full Room Interior Precision Wall & Trim Painting",
+      "description": "Complete room coverage (up to 150 sq ft) including minor spackling, sanding, two coats of premium low-VOC satin/eggshell paint, and razor-sharp baseboard cut-ins.",
+      "pricingModel": "fixed",
+      "basePrice": 240,
+      "durationMinutes": 240,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Customer selects paint color code 48 hours prior.",
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1302",
+      "providerId": "prov-profile-13",
+      "categoryId": "cat-home",
+      "subcategory": "Painting and maintenance",
+      "title": "Drywall Hole Repair & Seamless Orange-Peel Texture Match",
+      "description": "Cut-out and replacement of damaged drywall sections, fiberglass mesh taping, fast-set compound feathering, and matched spray texture.",
+      "pricingModel": "hourly",
+      "basePrice": 70,
+      "durationMinutes": 90,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1401",
+      "providerId": "prov-profile-14",
+      "categoryId": "cat-home",
+      "subcategory": "Pest control",
+      "title": "Targeted Integrated Pest Management (Child & Pet-Safe)",
+      "description": "Comprehensive inspection and eco-safe gel baiting/perimeter treatment for indoor ant trails, German cockroaches, wasps, and silverfish without airborne toxins.",
+      "pricingModel": "fixed",
+      "basePrice": 120,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "requirements": "Pets must be kept in separate room during 20-minute dry-down.",
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1402",
+      "providerId": "prov-profile-14",
+      "categoryId": "cat-home",
+      "subcategory": "Pest control",
+      "title": "Full Subterranean Termite & Wood-Destroying Insect Inspection",
+      "description": "Acoustic and thermal detection of structural termite colonies, mud tube identification, foundation assessment, and certified clearance report.",
+      "pricingModel": "fixed",
+      "basePrice": 180,
+      "durationMinutes": 90,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1501",
+      "providerId": "prov-profile-15",
+      "categoryId": "cat-home",
+      "subcategory": "AC and refrigerator repair",
+      "title": "Central Air Conditioner & Heat Pump 21-Point Seasonal Tune-Up",
+      "description": "Capacitor capacitance test, refrigerant pressure measurement, condenser coil chemical wash, contactor cleaning, and thermostat calibration.",
+      "pricingModel": "fixed",
+      "basePrice": 95,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1502",
+      "providerId": "prov-profile-15",
+      "categoryId": "cat-home",
+      "subcategory": "AC and refrigerator repair",
+      "title": "Ductless Mini-Split & Freon Refrigerant Leak Detection",
+      "description": "Electronic halogen sniffing and nitrogen pressure test to isolate coolant micro-leaks, flare nut tightening, and EPA-compliant refrigerant top-off.",
+      "pricingModel": "hourly",
+      "basePrice": 90,
+      "durationMinutes": 90,
+      "serviceRadiusKm": 30,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1601",
+      "providerId": "prov-profile-16",
+      "categoryId": "cat-home",
+      "subcategory": "Gardening and landscaping",
+      "title": "Lawn Core Aeration, De-Thatching & Organic Overseeding",
+      "description": "Deep core mechanical aeration to relieve soil compaction, thatch removal, premium shade/sun grass seed broadcast, and organic mycorrhizal fertilizer application.",
+      "pricingModel": "fixed",
+      "basePrice": 140,
+      "durationMinutes": 120,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1602",
+      "providerId": "prov-profile-16",
+      "categoryId": "cat-home",
+      "subcategory": "Gardening and landscaping",
+      "title": "Certified Arborist Tree Pruning & Shrub Shaping",
+      "description": "Deadwood canopy clearance, structural pruning to protect rooflines, precision hedge shearing, and complete green debris chipping/removal.",
+      "pricingModel": "hourly",
+      "basePrice": 65,
+      "durationMinutes": 120,
+      "serviceRadiusKm": 35,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1701",
+      "providerId": "prov-profile-17",
+      "categoryId": "cat-child",
+      "subcategory": "Qualified babysitters",
+      "title": "Certified In-Home Pediatric Childcare & Learning Supervision",
+      "description": "Compassionate, safe childcare by pediatric first-aid certified specialist. Stimulating developmental play, reading time, nutritious snack prep, and bedtime routines.",
+      "pricingModel": "hourly",
+      "basePrice": 35,
+      "durationMinutes": 180,
+      "serviceRadiusKm": 20,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1801",
+      "providerId": "prov-profile-18",
+      "categoryId": "cat-pet",
+      "subcategory": "Pet grooming",
+      "title": "Mobile Stress-Free Spa Grooming, Bath & De-Shedding",
+      "description": "Warm organic oat bath, nail grinding, gentle ear flushing, sanitary trim, blowout de-shedding, and coat conditioning in quiet mobile grooming setup.",
+      "pricingModel": "fixed",
+      "basePrice": 75,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1802",
+      "providerId": "prov-profile-18",
+      "categoryId": "cat-pet",
+      "subcategory": "Pet sitting",
+      "title": "Veterinary Technician Home Pet Visit & Medication Administration",
+      "description": "Subcutaneous fluids, insulin injections, oral pill administration, litter box sanitation, feeding, and 30 minutes of dedicated affection and play.",
+      "pricingModel": "hourly",
+      "basePrice": 30,
+      "durationMinutes": 45,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 12 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1901",
+      "providerId": "prov-profile-19",
+      "categoryId": "cat-transport",
+      "subcategory": "Document delivery",
+      "title": "Chain-of-Custody Secure Document & Medical Specimen Courier",
+      "description": "Point-to-point confidential delivery with live GPS tracking, physical signature capture, and tamper-evident courier pouch.",
+      "pricingModel": "fixed",
+      "basePrice": 25,
+      "durationMinutes": 45,
+      "serviceRadiusKm": 40,
+      "deliveryMode": "delivery",
+      "remoteAvailable": false,
+      "inPersonAvailable": false,
+      "cancellationPolicy": "Free cancellation up to 2 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-1902",
+      "providerId": "prov-profile-19",
+      "categoryId": "cat-transport",
+      "subcategory": "Authorized medical transportation",
+      "title": "Non-Emergency Wheelchair Accessible Health Transport",
+      "description": "Door-through-door safe transit in ADA-compliant hydraulic ramp van for doctor check-ups, dialysis centers, and physical therapy sessions.",
+      "pricingModel": "fixed",
+      "basePrice": 55,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 40,
+      "deliveryMode": "in_person",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 4 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-2001",
+      "providerId": "prov-profile-20",
+      "categoryId": "cat-beauty",
+      "subcategory": "Massage therapists",
+      "title": "In-Home Deep Tissue & Swedish Therapeutic Massage (60 Min)",
+      "description": "Licensed somatic therapy tailored to eliminate postural knots, sciatic discomfort, and shoulder strain using organic oils and hot towels.",
+      "pricingModel": "fixed",
+      "basePrice": 95,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 25,
+      "deliveryMode": "home_visit",
+      "remoteAvailable": false,
+      "inPersonAvailable": true,
+      "cancellationPolicy": "Free cancellation up to 24 hours prior.",
+      "isActive": true
+    },
+    {
+      "id": "srv-2101",
+      "providerId": "prov-profile-21",
+      "categoryId": "cat-pro",
+      "subcategory": "Accountants and tax professionals",
+      "title": "Small Business Bookkeeping & Quarterly Tax Strategy Review",
+      "description": "1-on-1 virtual financial review with licensed CPA. P&L analysis, expense categorization, estimated quarterly tax calculation, and deduction optimization.",
+      "pricingModel": "hourly",
+      "basePrice": 110,
+      "durationMinutes": 60,
+      "serviceRadiusKm": 100,
+      "deliveryMode": "online_consultation",
+      "remoteAvailable": true,
+      "inPersonAvailable": false,
       "cancellationPolicy": "Free cancellation up to 24 hours prior.",
       "isActive": true
     }
@@ -453,6 +2131,8 @@
       "serviceId": "srv-101",
       "serviceTitle": "Standard Electrical Diagnostic & Repair",
       "categoryId": "cat-home",
+      "subcategory": "Electricians",
+      "deliveryMode": "home_visit",
       "date": "2026-10-14",
       "timeSlot": "10:00 AM - 11:30 AM",
       "locationType": "in_person",
@@ -478,6 +2158,8 @@
       "serviceId": "srv-301",
       "serviceTitle": "1-on-1 Advanced Calculus & Linear Algebra Mastery",
       "categoryId": "cat-edu",
+      "subcategory": "Mathematics and science tutors",
+      "deliveryMode": "online_consultation",
       "date": "2026-10-08",
       "timeSlot": "04:00 PM - 05:00 PM",
       "locationType": "remote",
@@ -504,6 +2186,8 @@
       "serviceId": "srv-401",
       "serviceTitle": "Whole-Home Mesh Wi-Fi Setup & Dead-Zone Elimination",
       "categoryId": "cat-tech",
+      "subcategory": "Wi-Fi and network troubleshooting",
+      "deliveryMode": "home_visit",
       "date": "2026-10-16",
       "timeSlot": "01:00 PM - 03:00 PM",
       "locationType": "in_person",
@@ -635,6 +2319,72 @@
       "submittedAt": "2026-09-01T09:00:00Z",
       "status": "approved",
       "adminNotes": "License validated directly against State database. Status active with zero infractions."
+    },
+    {
+      "id": "ev-903",
+      "providerId": "prov-profile-6",
+      "documentType": "medical_board",
+      "documentName": "State_Medical_Board_License_MD.pdf",
+      "licenseNumber": "MD-481920",
+      "issuingAuthority": "State Board of Medical Licensure",
+      "submittedAt": "2026-09-10T08:30:00Z",
+      "status": "approved",
+      "adminNotes": "Medical Board registry confirmed. Active credential with zero malpractice citations."
+    },
+    {
+      "id": "ev-910",
+      "providerId": "prov-profile-10",
+      "documentType": "trade_license",
+      "documentName": "Master_Carpenter_Guild_Certification.pdf",
+      "licenseNumber": "CARP-4421",
+      "issuingAuthority": "Master Woodworkers & Builders Guild",
+      "submittedAt": "2026-09-12T14:00:00Z",
+      "status": "approved",
+      "adminNotes": "Guild registry active. Completed portfolio verification and commercial insurance audit."
+    },
+    {
+      "id": "ev-911",
+      "providerId": "prov-profile-11",
+      "documentType": "insurance",
+      "documentName": "Commercial_Janitorial_Bonding_Policy.pdf",
+      "licenseNumber": "CLEAN-88310",
+      "issuingAuthority": "State Commercial Bonding Bureau",
+      "submittedAt": "2026-09-15T09:20:00Z",
+      "status": "approved",
+      "adminNotes": "Bonding certificate #CLEAN-88310 active ($1M aggregate coverage)."
+    },
+    {
+      "id": "ev-914",
+      "providerId": "prov-profile-14",
+      "documentType": "certification",
+      "documentName": "EPA_Pesticide_Applicator_License.pdf",
+      "licenseNumber": "PEST-90412",
+      "issuingAuthority": "Department of Agriculture Pest Regulatory Board",
+      "submittedAt": "2026-09-18T10:15:00Z",
+      "status": "approved",
+      "adminNotes": "EPA applicator registration active. Clean compliance history."
+    },
+    {
+      "id": "ev-917",
+      "providerId": "prov-profile-17",
+      "documentType": "background_check",
+      "documentName": "TrustLine_Pediatric_FirstAid_Clearance.pdf",
+      "licenseNumber": "CHILD-20231",
+      "issuingAuthority": "State Department of Social Services & TrustLine Registry",
+      "submittedAt": "2026-10-11T13:40:00Z",
+      "status": "pending",
+      "adminNotes": "Submitted for administrator verification: Red Cross Pediatric CPR & federal fingerprint clearance."
+    },
+    {
+      "id": "ev-918",
+      "providerId": "prov-profile-18",
+      "documentType": "certification",
+      "documentName": "Registered_Veterinary_Technician_Credential.pdf",
+      "licenseNumber": "VET-88491",
+      "issuingAuthority": "State Board of Veterinary Medicine",
+      "submittedAt": "2026-10-12T08:15:00Z",
+      "status": "pending",
+      "adminNotes": "Awaiting administrator verification against State Veterinary Medical Board database."
     }
   ],
   "disputes": [
@@ -657,6 +2407,26 @@
   ],
   "auditLogs": [
     {
+      "id": "audit-3",
+      "adminId": "user-admin-1",
+      "adminName": "Marcus Vance",
+      "action": "INITIATE_DISPUTE_REVIEW",
+      "targetType": "dispute",
+      "targetId": "disp-501",
+      "details": "Opened inquiry into unauthorized disposal charge on booking bk-demo-dispute-1.",
+      "timestamp": "2026-10-10T09:30:00Z"
+    },
+    {
+      "id": "audit-2",
+      "adminId": "user-admin-1",
+      "adminName": "Marcus Vance",
+      "action": "VERIFY_MEDICAL_BOARD",
+      "targetType": "provider",
+      "targetId": "prov-profile-6",
+      "details": "Approved Dr. Aris Thorne State Medical Board License #MD-481920 after registry query.",
+      "timestamp": "2026-09-11T11:00:00Z"
+    },
+    {
       "id": "audit-1",
       "adminId": "user-admin-1",
       "adminName": "Marcus Vance",
@@ -665,16 +2435,6 @@
       "targetId": "prov-profile-1",
       "details": "Approved Master Electrician License #EL-894231 after state registry check.",
       "timestamp": "2026-09-02T10:14:00Z"
-    },
-    {
-      "id": "audit-2",
-      "adminId": "user-admin-1",
-      "adminName": "Marcus Vance",
-      "action": "INITIATE_DISPUTE_REVIEW",
-      "targetType": "dispute",
-      "targetId": "disp-501",
-      "details": "Opened inquiry into unauthorized disposal charge on booking bk-demo-dispute-1.",
-      "timestamp": "2026-10-10T09:30:00Z"
     }
   ],
   "notifications": [

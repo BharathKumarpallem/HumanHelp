@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { db } from '../db';
-import { ProviderProfile, ProviderService } from '../../src/types/index';
+import { ProviderProfile, ProviderService, DeliveryMode } from '../../src/types/index';
 
 const router = Router();
 
@@ -8,11 +8,14 @@ router.get('/', (req, res) => {
   const {
     q,
     category,
+    subcategory,
     priceMin,
     priceMax,
     verifiedOnly,
     minRating,
     serviceType,
+    deliveryMode,
+    isMedicalOnly,
     sort
   } = req.query;
 
@@ -26,16 +29,25 @@ router.get('/', (req, res) => {
       const matchTagline = p.tagline.toLowerCase().includes(query);
       const matchBio = p.bio.toLowerCase().includes(query);
       const matchSkills = p.skills.some(s => s.toLowerCase().includes(query));
+      const matchSubcats = (p.subcategories || []).some(sub => sub.toLowerCase().includes(query));
       const matchServices = (p.services || []).some(s => 
         s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
       );
-      return matchBusiness || matchTagline || matchBio || matchSkills || matchServices;
+      return matchBusiness || matchTagline || matchBio || matchSkills || matchSubcats || matchServices;
     });
   }
 
   // Category filter
   if (category && typeof category === 'string' && category !== 'all') {
     providers = providers.filter(p => p.categories.includes(category));
+  }
+
+  // Subcategory filter
+  if (subcategory && typeof subcategory === 'string' && subcategory !== 'all') {
+    providers = providers.filter(p => 
+      (p.subcategories || []).includes(subcategory) ||
+      (p.services || []).some(s => s.subcategory === subcategory)
+    );
   }
 
   // Verification status
@@ -45,6 +57,11 @@ router.get('/', (req, res) => {
       p.verificationStatus === 'category_verified' ||
       p.verificationStatus === 'identity_checked'
     );
+  }
+
+  // Medical professional filter
+  if (isMedicalOnly === 'true') {
+    providers = providers.filter(p => p.isMedicalProfessional === true);
   }
 
   // Minimum rating
@@ -69,15 +86,22 @@ router.get('/', (req, res) => {
     }
   }
 
-  // Service type (remote vs in-person)
+  // Delivery Mode filter
+  if (deliveryMode && deliveryMode !== 'all') {
+    providers = providers.filter(p => 
+      (p.services || []).some(s => s.deliveryMode === deliveryMode)
+    );
+  }
+
+  // Legacy Service type (remote vs in-person)
   if (serviceType && serviceType !== 'all') {
     if (serviceType === 'remote') {
       providers = providers.filter(p => 
-        (p.services || []).some(s => s.remoteAvailable)
+        (p.services || []).some(s => s.remoteAvailable || s.deliveryMode === 'online_consultation')
       );
     } else if (serviceType === 'in_person') {
       providers = providers.filter(p => 
-        (p.services || []).some(s => s.inPersonAvailable)
+        (p.services || []).some(s => s.inPersonAvailable || s.deliveryMode === 'home_visit' || s.deliveryMode === 'in_person')
       );
     }
   }
@@ -123,7 +147,7 @@ router.post('/:id/services', (req, res) => {
     return res.status(404).json({ error: 'Provider not found' });
   }
 
-  const { title, description, categoryId, pricingModel, basePrice, durationMinutes, cancellationPolicy } = req.body;
+  const { title, description, categoryId, subcategory, pricingModel, basePrice, durationMinutes, deliveryMode, cancellationPolicy, requiresPrescription } = req.body;
   if (!title || !description || !categoryId || !basePrice) {
     return res.status(400).json({ error: 'Title, description, category, and price are required' });
   }
@@ -132,14 +156,17 @@ router.post('/:id/services', (req, res) => {
     id: `srv-${Date.now()}`,
     providerId: provider.id,
     categoryId,
+    subcategory,
     title,
     description,
     pricingModel: pricingModel || 'hourly',
     basePrice: Number(basePrice),
     durationMinutes: durationMinutes ? Number(durationMinutes) : 60,
     serviceRadiusKm: provider.serviceRadiusKm || 25,
-    remoteAvailable: Boolean(req.body.remoteAvailable),
-    inPersonAvailable: req.body.inPersonAvailable !== undefined ? Boolean(req.body.inPersonAvailable) : true,
+    deliveryMode: (deliveryMode as DeliveryMode) || 'home_visit',
+    remoteAvailable: deliveryMode === 'online_consultation',
+    inPersonAvailable: deliveryMode !== 'online_consultation',
+    requiresPrescription: Boolean(requiresPrescription),
     cancellationPolicy: cancellationPolicy || 'Free cancellation up to 24 hours prior.',
     isActive: true
   };

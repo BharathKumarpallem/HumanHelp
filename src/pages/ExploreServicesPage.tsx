@@ -15,7 +15,12 @@ import {
   DollarSign, 
   Check, 
   MapPin,
-  RefreshCw
+  RefreshCw,
+  Activity,
+  Truck,
+  Home,
+  Video,
+  UserCheck
 } from 'lucide-react';
 
 export const ExploreServicesPage: React.FC = () => {
@@ -29,10 +34,12 @@ export const ExploreServicesPage: React.FC = () => {
   // Filters state initialized from URL search params
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
-  const [priceMax, setPriceMax] = useState<number>(150);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(searchParams.get('subcategory') || 'all');
+  const [deliveryMode, setDeliveryMode] = useState<string>('all');
+  const [priceMax, setPriceMax] = useState<number>(180);
   const [verifiedOnly, setVerifiedOnly] = useState<boolean>(searchParams.get('verifiedOnly') === 'true');
+  const [isMedicalOnly, setIsMedicalOnly] = useState<boolean>(false);
   const [minRating, setMinRating] = useState<number>(0);
-  const [serviceType, setServiceType] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('rating');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
@@ -56,10 +63,12 @@ export const ExploreServicesPage: React.FC = () => {
       const results = await api.providers.search({
         q: searchQuery || undefined,
         category: selectedCategory !== 'all' ? selectedCategory : undefined,
-        priceMax: priceMax < 150 ? priceMax : undefined,
+        subcategory: selectedSubcategory !== 'all' ? selectedSubcategory : undefined,
+        priceMax: priceMax < 180 ? priceMax : undefined,
         verifiedOnly: verifiedOnly || undefined,
+        isMedicalOnly: isMedicalOnly || undefined,
+        deliveryMode: deliveryMode !== 'all' ? deliveryMode : undefined,
         minRating: minRating > 0 ? minRating : undefined,
-        serviceType: serviceType !== 'all' ? serviceType : undefined,
         sort: sortBy,
       });
       setProviders(results);
@@ -72,7 +81,7 @@ export const ExploreServicesPage: React.FC = () => {
 
   useEffect(() => {
     fetchProviders();
-  }, [selectedCategory, verifiedOnly, minRating, serviceType, sortBy]);
+  }, [selectedCategory, selectedSubcategory, deliveryMode, verifiedOnly, isMedicalOnly, minRating, sortBy]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,10 +91,12 @@ export const ExploreServicesPage: React.FC = () => {
   const handleResetFilters = () => {
     setSearchQuery('');
     setSelectedCategory('all');
-    setPriceMax(150);
+    setSelectedSubcategory('all');
+    setDeliveryMode('all');
+    setPriceMax(180);
     setVerifiedOnly(false);
+    setIsMedicalOnly(false);
     setMinRating(0);
-    setServiceType('all');
     setSortBy('rating');
     setSearchParams({});
     setIsLoading(true);
@@ -95,20 +106,32 @@ export const ExploreServicesPage: React.FC = () => {
     });
   };
 
+  const activeCategoryObj = categories.find(c => c.id === selectedCategory);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Page Header */}
-      <div className="mb-8 space-y-2">
+      <div className="mb-6 space-y-2">
         <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white">
           Explore Services & Verified Professionals
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-          Compare transparent pricing, verified licenses, and real customer feedback with full confidence.
+          Compare transparent pricing, verified licenses, home visits, and express deliveries across 12 service domains.
         </p>
       </div>
 
+      {/* Regulated Category Notice if Healthcare */}
+      {activeCategoryObj?.isRegulated && (
+        <div className="mb-6 p-4 rounded-2xl bg-cyan-50/80 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-950 dark:text-cyan-200 flex items-start gap-3">
+          <Activity className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+          <div className="leading-relaxed">
+            <strong>{activeCategoryObj.name} Regulatory Policy:</strong> {activeCategoryObj.regulatoryNotice || 'Regulated services require validated professional licenses. Emergency conditions should immediately contact local emergency services (911/112).'}
+          </div>
+        </div>
+      )}
+
       {/* Top Search & Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center gap-3 mb-8">
+      <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
         <form onSubmit={handleSearchSubmit} className="flex-1 w-full flex items-center gap-2 p-1.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs">
           <div className="flex items-center gap-2.5 px-3 flex-1">
             <Search className="w-4 h-4 text-slate-400" />
@@ -116,7 +139,7 @@ export const ExploreServicesPage: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by specialty, skill (e.g. EV charger, Calculus, Wi-Fi)..."
+              placeholder="Search services (e.g. Doctor visit, Electrician, AC repair, Rx Delivery, Pet grooming)..."
               className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none"
             />
           </div>
@@ -151,8 +174,37 @@ export const ExploreServicesPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Subcategory Pills (when a category is selected) */}
+      {activeCategoryObj && activeCategoryObj.subcategories && activeCategoryObj.subcategories.length > 0 && (
+        <div className="mb-6 pb-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <button
+            onClick={() => setSelectedSubcategory('all')}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              selectedSubcategory === 'all'
+                ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+                : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-400'
+            }`}
+          >
+            All {activeCategoryObj.name}
+          </button>
+          {activeCategoryObj.subcategories.map((sub) => (
+            <button
+              key={sub}
+              onClick={() => setSelectedSubcategory(sub)}
+              className={`whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+                selectedSubcategory === sub
+                  ? 'bg-brand-600 text-white shadow-xs'
+                  : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-400'
+              }`}
+            >
+              {sub}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* FILTERS SIDEBAR (Desktop) */}
+        {/* FILTERS SIDEBAR */}
         <aside className={`lg:block ${mobileFilterOpen ? 'block' : 'hidden'} space-y-6`}>
           <div className="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -169,15 +221,49 @@ export const ExploreServicesPage: React.FC = () => {
               </button>
             </div>
 
-            {/* Categories */}
+            {/* Delivery Format Filter */}
             <div>
               <label className="block text-xs font-bold text-slate-900 dark:text-slate-100 mb-2">
-                Category
+                Delivery Format
               </label>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 text-xs">
+                {[
+                  { id: 'all', label: 'All Delivery Modes', icon: null },
+                  { id: 'home_visit', label: 'Home Visit / On-Site', icon: Home },
+                  { id: 'online_consultation', label: 'Online Consultation', icon: Video },
+                  { id: 'delivery', label: 'Courier Delivery', icon: Truck },
+                  { id: 'in_person', label: 'In-Person Facility', icon: MapPin },
+                ].map((mode) => {
+                  const Icon = mode.icon;
+                  return (
+                    <label key={mode.id} className="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
+                      <input
+                        type="radio"
+                        name="deliveryMode"
+                        checked={deliveryMode === mode.id}
+                        onChange={() => setDeliveryMode(mode.id)}
+                        className="text-brand-600 focus:ring-brand-500"
+                      />
+                      {Icon && <Icon className="w-3.5 h-3.5 text-slate-400" />}
+                      <span>{mode.label}</span>
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Categories */}
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
+              <label className="block text-xs font-bold text-slate-900 dark:text-slate-100 mb-2">
+                Category ({categories.length})
+              </label>
+              <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
                 <button
-                  onClick={() => setSelectedCategory('all')}
-                  className={`w-full text-left px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${
+                  onClick={() => {
+                    setSelectedCategory('all');
+                    setSelectedSubcategory('all');
+                  }}
+                  className={`w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium transition-colors ${
                     selectedCategory === 'all'
                       ? 'bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 font-bold'
                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
@@ -188,21 +274,27 @@ export const ExploreServicesPage: React.FC = () => {
                 {categories.map((c) => (
                   <button
                     key={c.id}
-                    onClick={() => setSelectedCategory(c.id)}
-                    className={`w-full text-left px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${
+                    onClick={() => {
+                      setSelectedCategory(c.id);
+                      setSelectedSubcategory('all');
+                    }}
+                    className={`w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium transition-colors flex items-center justify-between ${
                       selectedCategory === c.id
                         ? 'bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 font-bold'
                         : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
                     }`}
                   >
-                    {c.name}
+                    <span className="truncate">{c.name}</span>
+                    {c.isRegulated && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" title="Regulated profession" />
+                    )}
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Verification filter */}
-            <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 space-y-2">
               <label className="flex items-start gap-2.5 cursor-pointer text-xs">
                 <input
                   type="checkbox"
@@ -212,10 +304,27 @@ export const ExploreServicesPage: React.FC = () => {
                 />
                 <div>
                   <span className="font-bold text-slate-900 dark:text-slate-100 block">
-                    Verified Credentials Only
+                    Verified Licenses Only
                   </span>
                   <span className="text-[11px] text-slate-500 leading-tight">
-                    Show only providers with validated state trade licenses or credentials.
+                    Show only providers with validated board licenses.
+                  </span>
+                </div>
+              </label>
+
+              <label className="flex items-start gap-2.5 cursor-pointer text-xs">
+                <input
+                  type="checkbox"
+                  checked={isMedicalOnly}
+                  onChange={(e) => setIsMedicalOnly(e.target.checked)}
+                  className="mt-0.5 rounded border-slate-300 text-cyan-600 focus:ring-cyan-500"
+                />
+                <div>
+                  <span className="font-bold text-slate-900 dark:text-slate-100 block">
+                    Licensed Medical Professionals
+                  </span>
+                  <span className="text-[11px] text-slate-500 leading-tight">
+                    Doctors, Registered Nurses, & Medical Boards only.
                   </span>
                 </div>
               </label>
@@ -225,20 +334,20 @@ export const ExploreServicesPage: React.FC = () => {
             <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
               <div className="flex justify-between text-xs font-bold text-slate-900 dark:text-slate-100 mb-2">
                 <span>Max Starting Rate</span>
-                <span className="text-brand-600 dark:text-brand-400">${priceMax}/hr</span>
+                <span className="text-brand-600 dark:text-brand-400">${priceMax}</span>
               </div>
               <input
                 type="range"
-                min="30"
-                max="150"
+                min="15"
+                max="180"
                 step="5"
                 value={priceMax}
                 onChange={(e) => setPriceMax(Number(e.target.value))}
                 className="w-full accent-brand-600 cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-slate-400 mt-1">
-                <span>$30/hr</span>
-                <span>$150/hr+</span>
+                <span>$15</span>
+                <span>$180+</span>
               </div>
             </div>
 
@@ -263,46 +372,26 @@ export const ExploreServicesPage: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            {/* Service Type (Remote / In-person) */}
-            <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
-              <label className="block text-xs font-bold text-slate-900 dark:text-slate-100 mb-2">
-                Service Delivery
-              </label>
-              <div className="space-y-1.5">
-                {['all', 'in_person', 'remote'].map((mode) => (
-                  <label key={mode} className="flex items-center gap-2 cursor-pointer text-xs text-slate-700 dark:text-slate-300">
-                    <input
-                      type="radio"
-                      name="serviceType"
-                      checked={serviceType === mode}
-                      onChange={() => setServiceType(mode)}
-                      className="text-brand-600 focus:ring-brand-500"
-                    />
-                    <span className="capitalize">{mode.replace('_', ' ')}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
           </div>
         </aside>
 
         {/* RESULTS GRID */}
         <main className="lg:col-span-3 space-y-6">
           <div className="flex items-center justify-between text-xs text-slate-500 pb-2 border-b border-slate-100 dark:border-slate-800">
-            <span>Showing <strong>{providers.length}</strong> verified listing{providers.length === 1 ? '' : 's'}</span>
-            {verifiedOnly && (
-              <span className="text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                Filtering for verified credentials
-              </span>
-            )}
+            <span>Showing <strong>{providers.length}</strong> verified provider{providers.length === 1 ? '' : 's'}</span>
+            <div className="flex items-center gap-3">
+              {deliveryMode !== 'all' && (
+                <span className="capitalize text-brand-700 dark:text-brand-400 font-semibold">
+                  Mode: {deliveryMode.replace('_', ' ')}
+                </span>
+              )}
+            </div>
           </div>
 
           {isLoading ? (
             <div className="text-center py-20 space-y-3">
               <RefreshCw className="w-8 h-8 animate-spin text-brand-600 mx-auto" />
-              <p className="text-xs text-slate-500">Searching active providers and availability schedules...</p>
+              <p className="text-xs text-slate-500">Searching active providers and validated licenses...</p>
             </div>
           ) : providers.length === 0 ? (
             <div className="text-center py-20 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 space-y-4">
@@ -313,7 +402,7 @@ export const ExploreServicesPage: React.FC = () => {
                 No matching providers found
               </h3>
               <p className="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                We did not find active providers matching all your specified filters. Try loosening your price threshold or selecting "All Categories".
+                We did not find active providers matching your criteria. Try loosening filters or choosing "All Categories".
               </p>
               <button
                 onClick={handleResetFilters}

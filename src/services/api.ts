@@ -65,27 +65,37 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(data),
     }),
+    update: (id: string, data: Partial<ServiceCategory>) => request<ServiceCategory>(`/categories/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    }),
   },
 
   providers: {
     search: (filters?: {
       q?: string;
       category?: string;
+      subcategory?: string;
       priceMin?: number;
       priceMax?: number;
       verifiedOnly?: boolean;
       minRating?: number;
       serviceType?: string;
+      deliveryMode?: string;
+      isMedicalOnly?: boolean;
       sort?: string;
     }) => {
       const params = new URLSearchParams();
       if (filters?.q) params.set('q', filters.q);
       if (filters?.category) params.set('category', filters.category);
+      if (filters?.subcategory) params.set('subcategory', filters.subcategory);
       if (filters?.priceMin) params.set('priceMin', filters.priceMin.toString());
       if (filters?.priceMax) params.set('priceMax', filters.priceMax.toString());
       if (filters?.verifiedOnly) params.set('verifiedOnly', 'true');
       if (filters?.minRating) params.set('minRating', filters.minRating.toString());
       if (filters?.serviceType) params.set('serviceType', filters.serviceType);
+      if (filters?.deliveryMode) params.set('deliveryMode', filters.deliveryMode);
+      if (filters?.isMedicalOnly) params.set('isMedicalOnly', 'true');
       if (filters?.sort) params.set('sort', filters.sort);
       
       const queryStr = params.toString() ? `?${params.toString()}` : '';
@@ -122,10 +132,11 @@ export const api = {
       serviceId: string;
       date: string;
       timeSlot: string;
-      locationType: 'in_person' | 'remote';
+      locationType: 'in_person' | 'remote' | 'delivery';
       serviceAddress?: string;
       problemDescription: string;
       requirements?: string;
+      prescriptionNote?: string;
     }) => request<Booking>('/bookings', {
       method: 'POST',
       body: JSON.stringify(data),

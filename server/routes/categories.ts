@@ -10,7 +10,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { name, description, iconName, requiresSpecialLicense } = req.body;
+  const { 
+    name, 
+    description, 
+    iconName, 
+    requiresSpecialLicense,
+    isRegulated,
+    regulatoryNotice,
+    subcategories,
+    allowedDeliveryModes
+  } = req.body;
   if (!name || !description) {
     return res.status(400).json({ error: 'Name and description are required' });
   }
@@ -23,7 +32,12 @@ router.post('/', (req, res) => {
     description,
     iconName: iconName || 'Wrench',
     requiresSpecialLicense: Boolean(requiresSpecialLicense),
-    activeListingCount: 0
+    isRegulated: Boolean(isRegulated),
+    regulatoryNotice: regulatoryNotice || '',
+    subcategories: Array.isArray(subcategories) ? subcategories : [],
+    allowedDeliveryModes: Array.isArray(allowedDeliveryModes) && allowedDeliveryModes.length ? allowedDeliveryModes : ['home_visit', 'in_person'],
+    activeListingCount: 0,
+    isActive: true
   };
 
   db.addCategory(newCat);

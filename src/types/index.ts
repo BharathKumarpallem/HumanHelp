@@ -8,6 +8,8 @@ export type VerificationStatus =
   | 'category_verified'
   | 'verification_rejected';
 
+export type DeliveryMode = 'home_visit' | 'in_person' | 'online_consultation' | 'delivery';
+
 export interface UserProfile {
   id: string;
   email: string;
@@ -27,7 +29,12 @@ export interface ServiceCategory {
   description: string;
   iconName: string;
   requiresSpecialLicense: boolean;
+  isRegulated?: boolean;
+  regulatoryNotice?: string;
+  subcategories: string[];
+  allowedDeliveryModes: DeliveryMode[];
   activeListingCount: number;
+  isActive?: boolean;
 }
 
 export type PricingModel = 'fixed' | 'hourly' | 'quote_required';
@@ -36,14 +43,17 @@ export interface ProviderService {
   id: string;
   providerId: string;
   categoryId: string;
+  subcategory?: string;
   title: string;
   description: string;
   pricingModel: PricingModel;
   basePrice: number;
   durationMinutes?: number;
   serviceRadiusKm: number;
+  deliveryMode: DeliveryMode;
   remoteAvailable: boolean;
   inPersonAvailable: boolean;
+  requiresPrescription?: boolean;
   requirements?: string;
   cancellationPolicy: string;
   isActive: boolean;
@@ -52,7 +62,7 @@ export interface ProviderService {
 export interface VerificationEvidence {
   id: string;
   providerId: string;
-  documentType: 'government_id' | 'trade_license' | 'insurance' | 'certification';
+  documentType: 'government_id' | 'trade_license' | 'insurance' | 'certification' | 'medical_board' | 'pharmacy_license';
   documentName: string;
   licenseNumber?: string;
   issuingAuthority?: string;
@@ -69,6 +79,7 @@ export interface ProviderProfile {
   bio: string;
   avatarUrl: string;
   categories: string[]; // category IDs or slugs
+  subcategories?: string[];
   serviceArea: string;
   serviceRadiusKm: number;
   languages: string[];
@@ -76,6 +87,9 @@ export interface ProviderProfile {
   verificationStatus: VerificationStatus;
   verificationBadgeLabel: string;
   verificationDetails?: string;
+  isMedicalProfessional?: boolean;
+  licenseBoard?: string;
+  registeredBodyNumber?: string;
   rating: number;
   reviewCount: number;
   completedBookingsCount: number;
@@ -112,12 +126,16 @@ export interface Booking {
   serviceId: string;
   serviceTitle: string;
   categoryId: string;
+  subcategory?: string;
+  deliveryMode: DeliveryMode;
   date: string; // YYYY-MM-DD
   timeSlot: string; // e.g. "10:00 AM - 12:00 PM"
-  locationType: 'in_person' | 'remote';
+  locationType: 'in_person' | 'remote' | 'delivery';
   serviceAddress?: string;
   problemDescription: string;
   requirements?: string;
+  prescriptionNote?: string;
+  trackingStatus?: string;
   pricingModel: PricingModel;
   agreedPrice: number;
   platformFee: number;
@@ -182,7 +200,7 @@ export interface Dispute {
   customerName: string;
   providerId: string;
   providerName: string;
-  issueCategory: 'no_show' | 'poor_quality' | 'unauthorized_fee' | 'property_damage' | 'harassment' | 'other';
+  issueCategory: 'no_show' | 'poor_quality' | 'unauthorized_fee' | 'property_damage' | 'harassment' | 'medical_safeguard' | 'other';
   description: string;
   evidenceNotes?: string;
   requestedResolution: 'full_refund' | 'partial_refund' | 'service_redo' | 'formal_warning';
@@ -199,7 +217,7 @@ export interface SafetyReport {
   reportedUserId: string;
   reportedUserName: string;
   bookingId?: string;
-  reason: 'safety_violation' | 'harassment' | 'fraud' | 'misrepresentation' | 'other';
+  reason: 'safety_violation' | 'harassment' | 'fraud' | 'misrepresentation' | 'unlicensed_medical' | 'other';
   description: string;
   status: 'pending' | 'investigating' | 'resolved' | 'dismissed';
   createdAt: string;
@@ -244,7 +262,7 @@ export interface AuditLogItem {
   adminId: string;
   adminName: string;
   action: string;
-  targetType: 'provider' | 'booking' | 'dispute' | 'review' | 'user';
+  targetType: 'provider' | 'booking' | 'dispute' | 'review' | 'user' | 'category';
   targetId: string;
   details: string;
   timestamp: string;
