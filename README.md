@@ -3,6 +3,12 @@
 > **"Find the Right Help. With Greater Confidence."**  
 > Modern, responsive, full-stack marketplace connecting people with verified real-world professionals, built upon transparent upfront pricing, regulatory credential verification, and fair human dispute arbitration.
 
+[![Live Demo](https://img.shields.io/badge/Live_URL-GitHub_Pages-0D9488?style=for-the-badge&logo=github)](https://bharathkumarpallem.github.io/HumanHelp/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-16324F?style=for-the-badge&logo=github)](https://github.com/BharathKumarpallem/HumanHelp)
+
+- 🌐 **Live Website URL:** [https://bharathkumarpallem.github.io/HumanHelp/](https://bharathkumarpallem.github.io/HumanHelp/)
+- 📦 **GitHub Repository:** [https://github.com/BharathKumarpallem/HumanHelp](https://github.com/BharathKumarpallem/HumanHelp)
+
 ---
 
 ## 1. Executive Summary & Core Principles
