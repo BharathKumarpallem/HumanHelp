@@ -14,6 +14,12 @@ import {
   VerificationStatus,
   BookingStatus
 } from '../types';
+import { clientStorage } from './clientStorage';
+
+const isStaticHosting = typeof window !== 'undefined' && (
+  window.location.hostname.includes('github.io') ||
+  window.location.protocol === 'file:'
+);
 
 const API_BASE = '/api';
 
@@ -42,37 +48,92 @@ async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
 
 export const api = {
   auth: {
-    getMe: () => request<{ user: UserProfile; providerProfile: ProviderProfile | null }>('/auth/me'),
-    switchPersona: (role: UserRole) => request<{ user: UserProfile; providerProfile: ProviderProfile | null; message: string }>('/auth/switch-persona', {
-      method: 'POST',
-      body: JSON.stringify({ role }),
-    }),
-    login: (email: string) => request<{ user: UserProfile; providerProfile: ProviderProfile | null }>('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify({ email }),
-    }),
-    register: (data: { fullName: string; email: string; role: UserRole; phone?: string; location?: string }) => 
-      request<{ user: UserProfile }>('/auth/register', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      }),
-    logout: () => request<{ message: string }>('/auth/logout', { method: 'POST' }),
+    getMe: async () => {
+      if (isStaticHosting) return clientStorage.auth.getMe();
+      try {
+        return await request<{ user: UserProfile; providerProfile: ProviderProfile | null }>('/auth/me');
+      } catch {
+        return clientStorage.auth.getMe();
+      }
+    },
+    switchPersona: async (role: UserRole) => {
+      if (isStaticHosting) return clientStorage.auth.switchPersona(role);
+      try {
+        return await request<{ user: UserProfile; providerProfile: ProviderProfile | null; message: string }>('/auth/switch-persona', {
+          method: 'POST',
+          body: JSON.stringify({ role }),
+        });
+      } catch {
+        return clientStorage.auth.switchPersona(role);
+      }
+    },
+    login: async (email: string) => {
+      if (isStaticHosting) return clientStorage.auth.login(email);
+      try {
+        return await request<{ user: UserProfile; providerProfile: ProviderProfile | null }>('/auth/login', {
+          method: 'POST',
+          body: JSON.stringify({ email }),
+        });
+      } catch {
+        return clientStorage.auth.login(email);
+      }
+    },
+    register: async (data: { fullName: string; email: string; role: UserRole; phone?: string; location?: string }) => {
+      if (isStaticHosting) return clientStorage.auth.register(data);
+      try {
+        return await request<{ user: UserProfile }>('/auth/register', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.auth.register(data);
+      }
+    },
+    logout: async () => {
+      if (isStaticHosting) return clientStorage.auth.logout();
+      try {
+        return await request<{ message: string }>('/auth/logout', { method: 'POST' });
+      } catch {
+        return clientStorage.auth.logout();
+      }
+    },
   },
 
   categories: {
-    getAll: () => request<ServiceCategory[]>('/categories'),
-    create: (data: Partial<ServiceCategory>) => request<ServiceCategory>('/categories', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    update: (id: string, data: Partial<ServiceCategory>) => request<ServiceCategory>(`/categories/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify(data),
-    }),
+    getAll: async () => {
+      if (isStaticHosting) return clientStorage.categories.getAll();
+      try {
+        return await request<ServiceCategory[]>('/categories');
+      } catch {
+        return clientStorage.categories.getAll();
+      }
+    },
+    create: async (data: Partial<ServiceCategory>) => {
+      if (isStaticHosting) return clientStorage.categories.create(data);
+      try {
+        return await request<ServiceCategory>('/categories', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.categories.create(data);
+      }
+    },
+    update: async (id: string, data: Partial<ServiceCategory>) => {
+      if (isStaticHosting) return clientStorage.categories.update(id, data);
+      try {
+        return await request<ServiceCategory>(`/categories/${id}`, {
+          method: 'PATCH',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.categories.update(id, data);
+      }
+    },
   },
 
   providers: {
-    search: (filters?: {
+    search: async (filters?: {
       q?: string;
       category?: string;
       subcategory?: string;
@@ -85,48 +146,93 @@ export const api = {
       isMedicalOnly?: boolean;
       sort?: string;
     }) => {
-      const params = new URLSearchParams();
-      if (filters?.q) params.set('q', filters.q);
-      if (filters?.category) params.set('category', filters.category);
-      if (filters?.subcategory) params.set('subcategory', filters.subcategory);
-      if (filters?.priceMin) params.set('priceMin', filters.priceMin.toString());
-      if (filters?.priceMax) params.set('priceMax', filters.priceMax.toString());
-      if (filters?.verifiedOnly) params.set('verifiedOnly', 'true');
-      if (filters?.minRating) params.set('minRating', filters.minRating.toString());
-      if (filters?.serviceType) params.set('serviceType', filters.serviceType);
-      if (filters?.deliveryMode) params.set('deliveryMode', filters.deliveryMode);
-      if (filters?.isMedicalOnly) params.set('isMedicalOnly', 'true');
-      if (filters?.sort) params.set('sort', filters.sort);
-      
-      const queryStr = params.toString() ? `?${params.toString()}` : '';
-      return request<ProviderProfile[]>(`/providers${queryStr}`);
+      if (isStaticHosting) return clientStorage.providers.search(filters);
+      try {
+        const params = new URLSearchParams();
+        if (filters?.q) params.set('q', filters.q);
+        if (filters?.category) params.set('category', filters.category);
+        if (filters?.subcategory) params.set('subcategory', filters.subcategory);
+        if (filters?.priceMin) params.set('priceMin', filters.priceMin.toString());
+        if (filters?.priceMax) params.set('priceMax', filters.priceMax.toString());
+        if (filters?.verifiedOnly) params.set('verifiedOnly', 'true');
+        if (filters?.minRating) params.set('minRating', filters.minRating.toString());
+        if (filters?.serviceType) params.set('serviceType', filters.serviceType);
+        if (filters?.deliveryMode) params.set('deliveryMode', filters.deliveryMode);
+        if (filters?.isMedicalOnly) params.set('isMedicalOnly', 'true');
+        if (filters?.sort) params.set('sort', filters.sort);
+        
+        const queryStr = params.toString() ? `?${params.toString()}` : '';
+        return await request<ProviderProfile[]>(`/providers${queryStr}`);
+      } catch {
+        return clientStorage.providers.search(filters);
+      }
     },
-    getById: (id: string) => request<ProviderProfile & { reviews: Review[] }>(`/providers/${id}`),
-    update: (id: string, updates: Partial<ProviderProfile>) => request<ProviderProfile>(`/providers/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify(updates),
-    }),
-    addService: (providerId: string, data: Partial<ProviderService>) => request<ProviderService>(`/providers/${providerId}/services`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    updateService: (serviceId: string, updates: Partial<ProviderService>) => request<ProviderService>(`/providers/services/${serviceId}`, {
-      method: 'PATCH',
-      body: JSON.stringify(updates),
-    }),
+    getById: async (id: string) => {
+      if (isStaticHosting) return clientStorage.providers.getById(id);
+      try {
+        return await request<ProviderProfile & { reviews: Review[] }>(`/providers/${id}`);
+      } catch {
+        return clientStorage.providers.getById(id);
+      }
+    },
+    update: async (id: string, updates: Partial<ProviderProfile>) => {
+      if (isStaticHosting) return clientStorage.providers.update(id, updates);
+      try {
+        return await request<ProviderProfile>(`/providers/${id}`, {
+          method: 'PATCH',
+          body: JSON.stringify(updates),
+        });
+      } catch {
+        return clientStorage.providers.update(id, updates);
+      }
+    },
+    addService: async (providerId: string, data: Partial<ProviderService>) => {
+      if (isStaticHosting) return clientStorage.providers.addService(providerId, data);
+      try {
+        return await request<ProviderService>(`/providers/${providerId}/services`, {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.providers.addService(providerId, data);
+      }
+    },
+    updateService: async (serviceId: string, updates: Partial<ProviderService>) => {
+      if (isStaticHosting) return clientStorage.providers.updateService(serviceId, updates);
+      try {
+        return await request<ProviderService>(`/providers/services/${serviceId}`, {
+          method: 'PATCH',
+          body: JSON.stringify(updates),
+        });
+      } catch {
+        return clientStorage.providers.updateService(serviceId, updates);
+      }
+    },
   },
 
   bookings: {
-    getAll: (params?: { customerId?: string; providerId?: string; status?: string }) => {
-      const q = new URLSearchParams();
-      if (params?.customerId) q.set('customerId', params.customerId);
-      if (params?.providerId) q.set('providerId', params.providerId);
-      if (params?.status) q.set('status', params.status);
-      const str = q.toString() ? `?${q.toString()}` : '';
-      return request<Booking[]>(`/bookings${str}`);
+    getAll: async (params?: { customerId?: string; providerId?: string; status?: string }) => {
+      if (isStaticHosting) return clientStorage.bookings.getAll(params);
+      try {
+        const q = new URLSearchParams();
+        if (params?.customerId) q.set('customerId', params.customerId);
+        if (params?.providerId) q.set('providerId', params.providerId);
+        if (params?.status) q.set('status', params.status);
+        const str = q.toString() ? `?${q.toString()}` : '';
+        return await request<Booking[]>(`/bookings${str}`);
+      } catch {
+        return clientStorage.bookings.getAll(params);
+      }
     },
-    getById: (id: string) => request<Booking>(`/bookings/${id}`),
-    create: (data: {
+    getById: async (id: string) => {
+      if (isStaticHosting) return clientStorage.bookings.getById(id);
+      try {
+        return await request<Booking>(`/bookings/${id}`);
+      } catch {
+        return clientStorage.bookings.getById(id);
+      }
+    },
+    create: async (data: {
       customerId: string;
       providerId: string;
       serviceId: string;
@@ -137,159 +243,302 @@ export const api = {
       problemDescription: string;
       requirements?: string;
       prescriptionNote?: string;
-    }) => request<Booking>('/bookings', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    updateStatus: (id: string, payload: {
+    }) => {
+      if (isStaticHosting) return clientStorage.bookings.create(data);
+      try {
+        return await request<Booking>('/bookings', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.bookings.create(data);
+      }
+    },
+    updateStatus: async (id: string, payload: {
       status: BookingStatus;
       notes?: string;
       cancellationReason?: string;
       alternateProposedDate?: string;
       alternateProposedSlot?: string;
-    }) => request<Booking>(`/bookings/${id}/status`, {
-      method: 'PATCH',
-      body: JSON.stringify(payload),
-    }),
+    }) => {
+      if (isStaticHosting) return clientStorage.bookings.updateStatus(id, payload);
+      try {
+        return await request<Booking>(`/bookings/${id}/status`, {
+          method: 'PATCH',
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        return clientStorage.bookings.updateStatus(id, payload);
+      }
+    },
   },
 
   reviews: {
-    getForProvider: (providerId: string) => request<Review[]>(`/reviews?providerId=${providerId}`),
-    create: (data: {
+    getForProvider: async (providerId: string) => {
+      if (isStaticHosting) return clientStorage.reviews.getForProvider(providerId);
+      try {
+        return await request<Review[]>(`/reviews?providerId=${providerId}`);
+      } catch {
+        return clientStorage.reviews.getForProvider(providerId);
+      }
+    },
+    create: async (data: {
       bookingId: string;
       customerId: string;
       rating: number;
       title: string;
       comment: string;
-    }) => request<Review>('/reviews', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    respond: (reviewId: string, text: string) => request<Review>(`/reviews/${reviewId}/respond`, {
-      method: 'POST',
-      body: JSON.stringify({ text }),
-    }),
-    report: (reviewId: string) => request<{ message: string; review: Review }>(`/reviews/${reviewId}/report`, {
-      method: 'POST',
-    }),
+    }) => {
+      if (isStaticHosting) return clientStorage.reviews.create(data);
+      try {
+        return await request<Review>('/reviews', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.reviews.create(data);
+      }
+    },
+    respond: async (reviewId: string, text: string) => {
+      if (isStaticHosting) return clientStorage.reviews.respond(reviewId, text);
+      try {
+        return await request<Review>(`/reviews/${reviewId}/respond`, {
+          method: 'POST',
+          body: JSON.stringify({ text }),
+        });
+      } catch {
+        return clientStorage.reviews.respond(reviewId, text);
+      }
+    },
+    report: async (reviewId: string) => {
+      if (isStaticHosting) return clientStorage.reviews.report(reviewId);
+      try {
+        return await request<{ message: string; review: Review }>(`/reviews/${reviewId}/report`, {
+          method: 'POST',
+        });
+      } catch {
+        return clientStorage.reviews.report(reviewId);
+      }
+    },
   },
 
   verifications: {
-    getQueue: () => request<Array<VerificationEvidence & { providerName: string; providerAvatar: string; providerRating: number }>>('/verifications'),
-    submit: (data: {
+    getQueue: async () => {
+      if (isStaticHosting) return clientStorage.verifications.getQueue();
+      try {
+        return await request<Array<VerificationEvidence & { providerName: string; providerAvatar: string; providerRating: number }>>('/verifications');
+      } catch {
+        return clientStorage.verifications.getQueue();
+      }
+    },
+    submit: async (data: {
       providerId: string;
       documentType: string;
       documentName: string;
       licenseNumber?: string;
       issuingAuthority?: string;
-    }) => request<VerificationEvidence>('/verifications', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    review: (id: string, payload: {
+    }) => {
+      if (isStaticHosting) return clientStorage.verifications.submit(data);
+      try {
+        return await request<VerificationEvidence>('/verifications', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.verifications.submit(data);
+      }
+    },
+    review: async (id: string, payload: {
       status: 'approved' | 'rejected';
       adminNotes: string;
       badgeType?: VerificationStatus;
       adminId?: string;
       adminName?: string;
-    }) => request<VerificationEvidence>(`/verifications/${id}/review`, {
-      method: 'PATCH',
-      body: JSON.stringify(payload),
-    }),
+    }) => {
+      if (isStaticHosting) return clientStorage.verifications.review(id, payload);
+      try {
+        return await request<VerificationEvidence>(`/verifications/${id}/review`, {
+          method: 'PATCH',
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        return clientStorage.verifications.review(id, payload);
+      }
+    },
   },
 
   messages: {
-    getConversations: (userId?: string) => {
-      const q = userId ? `?userId=${userId}` : '';
-      return request<Conversation[]>(`/messages/conversations${q}`);
+    getConversations: async (userId?: string) => {
+      if (isStaticHosting) return clientStorage.messages.getConversations(userId);
+      try {
+        const q = userId ? `?userId=${userId}` : '';
+        return await request<Conversation[]>(`/messages/conversations${q}`);
+      } catch {
+        return clientStorage.messages.getConversations(userId);
+      }
     },
-    getThread: (conversationId: string) => request<Message[]>(`/messages/thread/${conversationId}`),
-    sendMessage: (data: { conversationId: string; senderId: string; text: string }) => request<Message>('/messages', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
+    getThread: async (conversationId: string) => {
+      if (isStaticHosting) return clientStorage.messages.getThread(conversationId);
+      try {
+        return await request<Message[]>(`/messages/thread/${conversationId}`);
+      } catch {
+        return clientStorage.messages.getThread(conversationId);
+      }
+    },
+    sendMessage: async (data: { conversationId: string; senderId: string; text: string }) => {
+      if (isStaticHosting) return clientStorage.messages.sendMessage(data);
+      try {
+        return await request<Message>('/messages', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.messages.sendMessage(data);
+      }
+    },
   },
 
   disputes: {
-    getAll: (params?: { customerId?: string; providerId?: string }) => {
-      const q = new URLSearchParams();
-      if (params?.customerId) q.set('customerId', params.customerId);
-      if (params?.providerId) q.set('providerId', params.providerId);
-      const str = q.toString() ? `?${q.toString()}` : '';
-      return request<Dispute[]>(`/disputes${str}`);
+    getAll: async (params?: { customerId?: string; providerId?: string }) => {
+      if (isStaticHosting) return clientStorage.disputes.getAll(params);
+      try {
+        const q = new URLSearchParams();
+        if (params?.customerId) q.set('customerId', params.customerId);
+        if (params?.providerId) q.set('providerId', params.providerId);
+        const str = q.toString() ? `?${q.toString()}` : '';
+        return await request<Dispute[]>(`/disputes${str}`);
+      } catch {
+        return clientStorage.disputes.getAll(params);
+      }
     },
-    create: (data: {
+    create: async (data: {
       bookingId: string;
       customerId: string;
       issueCategory: string;
       description: string;
       evidenceNotes?: string;
       requestedResolution: string;
-    }) => request<Dispute>('/disputes', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-    resolve: (id: string, payload: {
+    }) => {
+      if (isStaticHosting) return clientStorage.disputes.create(data);
+      try {
+        return await request<Dispute>('/disputes', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.disputes.create(data);
+      }
+    },
+    resolve: async (id: string, payload: {
       status: string;
       adminDecision: string;
       adminId?: string;
       adminName?: string;
-    }) => request<Dispute>(`/disputes/${id}/resolve`, {
-      method: 'PATCH',
-      body: JSON.stringify(payload),
-    }),
+    }) => {
+      if (isStaticHosting) return clientStorage.disputes.resolve(id, payload);
+      try {
+        return await request<Dispute>(`/disputes/${id}/resolve`, {
+          method: 'PATCH',
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        return clientStorage.disputes.resolve(id, payload);
+      }
+    },
   },
 
   safety: {
-    getGuidelines: () => request<{ emergencyNotice: string; safetyPillars: Array<{ title: string; description: string }> }>('/safety/guidelines'),
-    report: (data: {
+    getGuidelines: async () => {
+      if (isStaticHosting) return clientStorage.safety.getGuidelines();
+      try {
+        return await request<{ emergencyNotice: string; safetyPillars: Array<{ title: string; description: string }> }>('/safety/guidelines');
+      } catch {
+        return clientStorage.safety.getGuidelines();
+      }
+    },
+    report: async (data: {
       reporterId: string;
       reportedUserId: string;
       bookingId?: string;
       reason: string;
       description: string;
-    }) => request<{ message: string }>('/safety/report', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
+    }) => {
+      if (isStaticHosting) return clientStorage.safety.report(data);
+      try {
+        return await request<{ message: string }>('/safety/report', {
+          method: 'POST',
+          body: JSON.stringify(data),
+        });
+      } catch {
+        return clientStorage.safety.report(data);
+      }
+    },
   },
 
   ai: {
-    chat: (message: string, conversationHistory?: any[]) => request<{
-      reply: string;
-      matchedProviders: Array<{
-        id: string;
-        businessName: string;
-        tagline: string;
-        rating: number;
-        reviewCount: number;
-        startingRate: number;
-        verificationBadgeLabel: string;
-        categoryMatch: string;
-        avatarUrl: string;
-        matchReason: string;
-      }>;
-      suggestedAction?: any;
-    }>('/ai/assistant', {
-      method: 'POST',
-      body: JSON.stringify({ message, conversationHistory }),
-    }),
+    chat: async (message: string, conversationHistory?: any[]) => {
+      if (isStaticHosting) return clientStorage.ai.chat(message);
+      try {
+        return await request<{
+          reply: string;
+          matchedProviders: Array<{
+            id: string;
+            businessName: string;
+            tagline: string;
+            rating: number;
+            reviewCount: number;
+            startingRate: number;
+            verificationBadgeLabel: string;
+            categoryMatch: string;
+            avatarUrl: string;
+            matchReason: string;
+          }>;
+          suggestedAction?: any;
+        }>('/ai/assistant', {
+          method: 'POST',
+          body: JSON.stringify({ message, conversationHistory }),
+        });
+      } catch {
+        return clientStorage.ai.chat(message);
+      }
+    },
   },
 
   admin: {
-    getMetrics: () => request<{
-      totalUsers: number;
-      totalProviders: number;
-      verifiedProviders: number;
-      pendingVerifications: number;
-      totalBookings: number;
-      completedBookings: number;
-      activeBookings: number;
-      openDisputes: number;
-      totalGrossVolume: number;
-      trustScoreAverage: number;
-    }>('/admin/metrics'),
-    getAuditLogs: () => request<AuditLogItem[]>('/admin/audit-logs'),
-    resetDemo: () => request<{ message: string }>('/admin/reset-demo', { method: 'POST' }),
+    getMetrics: async () => {
+      if (isStaticHosting) return clientStorage.admin.getMetrics();
+      try {
+        return await request<{
+          totalUsers: number;
+          totalProviders: number;
+          verifiedProviders: number;
+          pendingVerifications: number;
+          totalBookings: number;
+          completedBookings: number;
+          activeBookings: number;
+          openDisputes: number;
+          totalGrossVolume: number;
+          trustScoreAverage: number;
+        }>('/admin/metrics');
+      } catch {
+        return clientStorage.admin.getMetrics();
+      }
+    },
+    getAuditLogs: async () => {
+      if (isStaticHosting) return clientStorage.admin.getAuditLogs();
+      try {
+        return await request<AuditLogItem[]>('/admin/audit-logs');
+      } catch {
+        return clientStorage.admin.getAuditLogs();
+      }
+    },
+    resetDemo: async () => {
+      if (isStaticHosting) return clientStorage.admin.resetDemo();
+      try {
+        return await request<{ message: string }>('/admin/reset-demo', { method: 'POST' });
+      } catch {
+        return clientStorage.admin.resetDemo();
+      }
+    },
   },
 };

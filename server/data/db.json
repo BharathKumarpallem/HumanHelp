@@ -2121,6 +2121,31 @@
   ],
   "bookings": [
     {
+      "id": "bk-1791862900407",
+      "customerId": "user-cust-1",
+      "customerName": "Alex Rivera",
+      "customerEmail": "alex.rivera@example.com",
+      "providerId": "prov-profile-1",
+      "providerName": "Chen Precision Electrical LLC",
+      "providerAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+      "serviceId": "srv-101",
+      "serviceTitle": "Standard Electrical Diagnostic & Repair",
+      "categoryId": "cat-home",
+      "date": "2026-10-15",
+      "timeSlot": "10:00 AM - 12:00 PM",
+      "locationType": "in_person",
+      "serviceAddress": "Metropolitan Area, Downtown",
+      "problemDescription": "Flickering lights in living room and tripped circuit breaker in basement panel.",
+      "pricingModel": "hourly",
+      "agreedPrice": 85,
+      "platformFee": 4.25,
+      "totalAmount": 89.25,
+      "status": "accepted",
+      "statusNotes": "Provider accepted booking request.",
+      "createdAt": "2026-10-13T03:41:40.408Z",
+      "updatedAt": "2026-10-13T03:46:30.117Z"
+    },
+    {
       "id": "bk-1001",
       "customerId": "user-cust-1",
       "customerName": "Alex Rivera",
@@ -2438,6 +2463,26 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif-1791863190119",
+      "userId": "user-cust-1",
+      "title": "Booking Status: accepted",
+      "message": "Chen Precision Electrical LLC accepted your booking for 2026-10-15!",
+      "type": "booking",
+      "link": "/bookings",
+      "isRead": false,
+      "createdAt": "2026-10-13T03:46:30.119Z"
+    },
+    {
+      "id": "notif-1791862900415",
+      "userId": "user-prov-1",
+      "title": "New Service Booking Request",
+      "message": "Alex Rivera requested Standard Electrical Diagnostic & Repair for 2026-10-15 (10:00 AM - 12:00 PM).",
+      "type": "booking",
+      "link": "/provider/dashboard",
+      "isRead": false,
+      "createdAt": "2026-10-13T03:41:40.415Z"
+    },
     {
       "id": "notif-1",
       "userId": "user-cust-1",

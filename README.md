@@ -19,26 +19,20 @@ HumanHelp is designed to solve the trust deficit in modern service marketplaces:
 
 ## 2. Architecture Overview
 
-HumanHelp utilizes a dual-tier full-stack architecture:
+HumanHelp runs as a **single, unified full-stack application** on a single port (`http://localhost:5173`):
 
 ```
-HumanHelp Platform
-├── Frontend (Port 5173)
-│   ├── React 19 + TypeScript + Vite
-│   ├── Tailwind CSS + Custom Design System
-│   ├── React Router navigation
-│   ├── Lucide Icons
-│   ├── Multi-perspective Role Switcher (Customer, Provider, Admin)
-│   ├── Interactive Booking & Dispute Modals
-│   └── Sourced AI Discovery Assistant Widget
+HumanHelp Unified Full-Stack Platform (Single Port 5173)
+├── Unified Express Server & Vite HMR Engine (server/index.ts)
+│   ├── Serves React 19 Frontend with Tailwind CSS & Lucide Icons
+│   ├── Serves REST API routes (/api/*) directly on the same host & port
+│   ├── Integrated Session, Persona & Role Authorization
+│   ├── Model-Independent AI Matching Engine (/api/ai/assistant)
+│   └── Multi-perspective Roles (Customer, Provider, Administrator)
 │
-└── Backend Server (Port 3001)
-    ├── Node.js + Express 5 + TypeScript (via tsx)
-    ├── Modular REST API (/api/*)
-    ├── Session & Role Authorization
-    ├── Model-Independent AI Matching Engine
-    ├── File-backed Atomic Store (server/data/db.json) with Reset Capability
-    └── Supabase PostgreSQL Migration & RLS Layer (supabase/migrations/20261012_init.sql)
+└── Database & Persistence Layer
+    ├── Active Atomic JSON Store (server/data/db.json) with Seed Data & Reset
+    └── Supabase PostgreSQL Migration with Row Level Security (supabase/migrations/20261012_init.sql)
 ```
 
 ---
@@ -132,23 +126,15 @@ HumanHelp/
    npm install
    ```
 
-3. Start both the Express backend and Vite client concurrently:
+3. Start the unified full-stack application (Frontend + Backend + DB combined):
    ```bash
    npm run dev
    ```
 
 4. Open your browser:
-   - **Frontend App:** [http://localhost:5173](http://localhost:5173)
-   - **Backend API:** [http://localhost:3001/api/health](http://localhost:3001/api/health)
-
-### Running Separately (Optional)
-- To run only the backend server:
-  ```bash
-  npm run server
-  ```
-- To run only the Vite frontend:
-  ```bash
-  npm run client
+   - **Unified Application (Frontend + Backend + DB):** [http://localhost:5173](http://localhost:5173)
+   - **Backend API Health Check:** [http://localhost:5173/api/health](http://localhost:5173/api/health)
+   - **All API routes:** [http://localhost:5173/api/*](http://localhost:5173/api/) (e.g. `/api/providers`, `/api/categories`, `/api/bookings`)
   ```
 - To test the production build:
   ```bash

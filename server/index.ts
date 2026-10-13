@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
 import authRouter from './routes/auth';
 import categoriesRouter from './routes/categories';
 import providersRouter from './routes/providers';
@@ -16,7 +18,7 @@ import adminRouter from './routes/admin';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '5173', 10);
 
 app.use(cors());
 app.use(express.json());
@@ -26,7 +28,7 @@ app.use((req, res, next) => {
   const start = Date.now();
   res.on('finish', () => {
     const duration = Date.now() - start;
-    if (process.env.NODE_ENV !== 'test') {
+    if (process.env.NODE_ENV !== 'test' && req.originalUrl.startsWith('/api')) {
       console.log(`[API] ${req.method} ${req.originalUrl} - ${res.statusCode} (${duration}ms)`);
     }
   });
@@ -37,13 +39,14 @@ app.use((req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
-    platform: 'HumanHelp API',
+    platform: 'HumanHelp Unified Platform',
     version: '1.0.0',
+    mode: process.env.NODE_ENV || 'development',
     timestamp: new Date().toISOString()
   });
 });
 
-// Mount Routes
+// Mount Backend API Routes
 app.use('/api/auth', authRouter);
 app.use('/api/categories', categoriesRouter);
 app.use('/api/providers', providersRouter);
@@ -56,20 +59,55 @@ app.use('/api/safety', safetyRouter);
 app.use('/api/ai', aiRouter);
 app.use('/api/admin', adminRouter);
 
-// 404 handler for unmatched routes
-app.use((req, res) => {
+// 404 handler for unmatched API routes
+app.use((req, res, next) => {
   if (req.path.startsWith('/api')) {
-    return res.status(404).json({ error: `Route not found: ${req.method} ${req.originalUrl}` });
+    return res.status(404).json({ error: `API route not found: ${req.method} ${req.originalUrl}` });
   }
-  res.status(404).send('Not Found');
+  next();
 });
 
-app.listen(PORT, () => {
-  console.log(`===============================================`);
-  console.log(`🚀 HumanHelp Backend Server is running!`);
-  console.log(`📡 URL: http://localhost:${PORT}`);
-  console.log(`🛡️  Ready to serve verified human services.`);
-  console.log(`===============================================`);
-});
+async function startUnifiedServer() {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const distPath = path.resolve(process.cwd(), 'dist');
+
+  // Unified frontend integration
+  if (!isProduction && fs.existsSync(path.resolve(process.cwd(), 'vite.config.ts'))) {
+    try {
+      const { createServer: createViteServer } = await import('vite');
+      const vite = await createViteServer({
+        server: { middlewareMode: true },
+        appType: 'spa',
+      });
+      app.use(vite.middlewares);
+      console.log('⚡ Vite HMR & SPA dev middleware integrated directly into Express server');
+    } catch (err) {
+      console.warn('Vite dev middleware initialization warning, falling back to static build:', err);
+      if (fs.existsSync(distPath)) {
+        app.use(express.static(distPath));
+        app.use((_req, res) => {
+          res.sendFile(path.resolve(distPath, 'index.html'));
+        });
+      }
+    }
+  } else if (fs.existsSync(distPath)) {
+    console.log(`📦 Serving pre-built production bundle from ${distPath}`);
+    app.use(express.static(distPath));
+    app.use((_req, res) => {
+      res.sendFile(path.resolve(distPath, 'index.html'));
+    });
+  }
+
+  app.listen(PORT, () => {
+    console.log(`=============================================================`);
+    console.log(`🚀 HumanHelp UNIFIED Full-Stack Platform is running!`);
+    console.log(`🌐 Combined URL (Frontend + Backend + DB): http://localhost:${PORT}`);
+    console.log(`📡 Backend API: http://localhost:${PORT}/api/health`);
+    console.log(`🛡️  All services, UI, and database connected in ONE place.`);
+    console.log(`=============================================================`);
+  });
+}
+
+startUnifiedServer();
 
 export default app;

@@ -62,7 +62,7 @@ export interface ProviderService {
 export interface VerificationEvidence {
   id: string;
   providerId: string;
-  documentType: 'government_id' | 'trade_license' | 'insurance' | 'certification' | 'medical_board' | 'pharmacy_license';
+  documentType: 'government_id' | 'trade_license' | 'insurance' | 'certification' | 'medical_board' | 'pharmacy_license' | 'background_check';
   documentName: string;
   licenseNumber?: string;
   issuingAuthority?: string;
